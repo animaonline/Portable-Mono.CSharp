@@ -1,0 +1,1 @@
+A branch of Mono's Mono.CSharp , featuring an evaluator that can be used to evalute c# code. Runs fine on CLR and Mono.
