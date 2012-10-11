@@ -9,6 +9,7 @@ namespace Tester
     {
         static void Main(string[] args)
         {
+            ConsoleSample.Start();
         }
     }
 }
