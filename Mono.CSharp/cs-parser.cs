@@ -1,6 +1,5 @@
 // created by jay 0.7 (c) 1998 Axel.Schreiner@informatik.uni-osnabrueck.de
 
-#line 2 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 //
 // cs-parser.jay: The Parser for the C# compiler
 //
@@ -141,7 +140,7 @@ namespace Mono.CSharp
 		//
 		LocationsBag lbag;
 		List<Tuple<Modifiers, Location>> mod_locations;
-#line default
+ 
 
   /** error output stream.
       It should be changeable.
@@ -1408,20 +1407,18 @@ namespace Mono.CSharp
         yyVal = yyV > yyTop ? null : yyVals[yyV]; // yyVal = yyDefault(yyV > yyTop ? null : yyVals[yyV]);
         switch (yyN) {
 case 1:
-#line 376 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+ 
   {
 		Lexer.check_incorrect_doc_comment ();
 	  }
   break;
 case 2:
-#line 377 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { Lexer.CompleteOnEOF = false; }
   break;
 case 6:
   case_6();
   break;
-case 7:
-#line 396 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 7: 
   {
 		module.AddAttributes ((Attributes) yyVals[0+yyTop], current_namespace);
 	  }
@@ -1432,8 +1429,7 @@ case 8:
 case 13:
   case_13();
   break;
-case 14:
-#line 441 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 14: 
   {
 		Error_SyntaxError (yyToken);
 	  }
@@ -1474,8 +1470,7 @@ case 27:
 case 40:
   case_40();
   break;
-case 41:
-#line 615 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 41: 
   {
 		current_namespace.DeclarationFound = true;
 	  }
@@ -1489,8 +1484,7 @@ case 50:
 case 51:
   case_51();
   break;
-case 52:
-#line 669 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 52: 
   {
 		lexer.parsing_attribute_section = true;
 	  }
@@ -1504,8 +1498,7 @@ case 54:
 case 55:
   case_55();
   break;
-case 56:
-#line 699 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 56: 
   {
 		yyVal = yyVals[-2+yyTop];
 	  }
@@ -1513,19 +1506,16 @@ case 56:
 case 57:
   case_57();
   break;
-case 58:
-#line 708 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 58: 
   { yyVal = "event"; }
   break;
-case 59:
-#line 709 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 59: 
   { yyVal = "return"; }
   break;
 case 60:
   case_60();
   break;
-case 61:
-#line 726 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
+case 61: 
   {
 		yyVal = new List<Attribute> (4) { (Attribute) yyVals[0+yyTop] };
 	  }
@@ -1534,7 +1524,6 @@ case 62:
   case_62();
   break;
 case 63:
-#line 740 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -1543,17 +1532,14 @@ case 64:
   case_64();
   break;
 case 66:
-#line 759 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 67:
-#line 763 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[-1+yyTop];
 	  }
   break;
 case 68:
-#line 768 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 69:
@@ -1569,13 +1555,11 @@ case 72:
   case_72();
   break;
 case 73:
-#line 810 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	yyVal = new Argument ((Expression) yyVals[0+yyTop]);
 	  }
   break;
 case 75:
-#line 818 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -1587,29 +1571,24 @@ case 77:
   case_77();
   break;
 case 78:
-#line 844 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 79:
-#line 848 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { 
 		yyVal = Argument.AType.Ref;
 	  }
   break;
 case 80:
-#line 852 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { 
 		yyVal = Argument.AType.Out;
 	  }
   break;
 case 83:
-#line 864 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_modifiers = true;
 	  }
   break;
 case 84:
-#line 868 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_modifiers = true;
 	  }
@@ -1618,13 +1597,11 @@ case 96:
   case_96();
   break;
 case 97:
-#line 899 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.ConstraintsParsing = true;
 	  }
   break;
 case 98:
-#line 903 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { 
 		push_current_container (new Struct (current_container, (MemberName) yyVals[0+yyTop], (Modifiers) yyVals[-4+yyTop], (Attributes) yyVals[-5+yyTop]), yyVals[-3+yyTop]);
 	  }
@@ -1642,7 +1619,6 @@ case 102:
   case_102();
   break;
 case 103:
-#line 938 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		Error_SyntaxError (yyToken);
 	  }
@@ -1657,13 +1633,11 @@ case 106:
   case_106();
   break;
 case 109:
-#line 987 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
   break;
 case 110:
-#line 991 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
@@ -1672,7 +1646,6 @@ case 111:
   case_111();
   break;
 case 112:
-#line 1007 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -1696,7 +1669,6 @@ case 120:
   case_120();
   break;
 case 121:
-#line 1085 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		report.Error (1641, GetLocation (yyVals[-1+yyTop]), "A fixed size buffer field must have the array size specifier after the field name");
 	  }
@@ -1708,13 +1680,11 @@ case 124:
   case_124();
   break;
 case 127:
-#line 1114 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
   break;
 case 128:
-#line 1118 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
@@ -1723,7 +1693,6 @@ case 129:
   case_129();
   break;
 case 130:
-#line 1131 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -1732,13 +1701,11 @@ case 131:
   case_131();
   break;
 case 134:
-#line 1150 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
   break;
 case 135:
-#line 1154 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
@@ -1747,7 +1714,6 @@ case 136:
   case_136();
   break;
 case 137:
-#line 1170 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -1768,7 +1734,6 @@ case 144:
   case_144();
   break;
 case 145:
-#line 1237 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.All;
 	  }
@@ -1780,7 +1745,6 @@ case 147:
   case_147();
   break;
 case 148:
-#line 1277 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_generic_declaration = true;
 	  }
@@ -1789,7 +1753,6 @@ case 149:
   case_149();
   break;
 case 150:
-#line 1287 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.ConstraintsParsing = true;
 	  }
@@ -1804,11 +1767,9 @@ case 153:
   case_153();
   break;
 case 155:
-#line 1358 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 156:
-#line 1362 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = ParametersCompiled.EmptyReadOnlyParameters; }
   break;
 case 158:
@@ -1833,13 +1794,11 @@ case 164:
   case_164();
   break;
 case 165:
-#line 1420 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ParametersCompiled (new Parameter[] { (Parameter) yyVals[0+yyTop] } );
 	  }
   break;
 case 166:
-#line 1424 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ParametersCompiled (new Parameter [] { new ArglistParameter (GetLocation (yyVals[0+yyTop])) }, true);
 	  }
@@ -1866,7 +1825,6 @@ case 173:
   case_173();
   break;
 case 174:
-#line 1502 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	++lexer.parsing_block;
 	  }
@@ -1875,11 +1833,9 @@ case 175:
   case_175();
   break;
 case 176:
-#line 1543 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Parameter.Modifier.NONE; }
   break;
 case 178:
-#line 1551 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -1912,7 +1868,6 @@ case 187:
   case_187();
   break;
 case 188:
-#line 1641 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		Error_DuplicateParameterModifier (GetLocation (yyVals[-1+yyTop]), Parameter.Modifier.PARAMS);
 	  }
@@ -1933,7 +1888,6 @@ case 193:
   case_193();
   break;
 case 194:
-#line 1695 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	valid_param_mod = ParameterModifierType.Params | ParameterModifierType.DefaultValue;
 	  }
@@ -1942,7 +1896,6 @@ case 195:
   case_195();
   break;
 case 196:
-#line 1724 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.PropertyParsing = false;
 	  }
@@ -1972,7 +1925,6 @@ case 209:
   case_209();
   break;
 case 210:
-#line 1869 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.ConstraintsParsing = true;
 	  }
@@ -1990,55 +1942,46 @@ case 214:
   case_214();
   break;
 case 215:
-#line 1904 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		Error_SyntaxError (yyToken);	  
 	  }
   break;
 case 218:
-#line 1916 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_modifiers = true;
 	  }
   break;
 case 219:
-#line 1920 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_modifiers = true;
 	  }
   break;
 case 220:
-#line 1927 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		report.Error (525, GetLocation (yyVals[0+yyTop]), "Interfaces cannot contain fields or constants");
 	  }
   break;
 case 221:
-#line 1931 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		report.Error (525, GetLocation (yyVals[0+yyTop]), "Interfaces cannot contain fields or constants");
 	  }
   break;
 case 226:
-#line 1939 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	report.Error (567, GetLocation (yyVals[0+yyTop]), "Interfaces cannot contain operators");
 	  }
   break;
 case 227:
-#line 1943 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	report.Error (526, GetLocation (yyVals[0+yyTop]), "Interfaces cannot contain contructors");
 	  }
   break;
 case 228:
-#line 1947 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	report.Error (524, GetLocation (yyVals[0+yyTop]), "Interfaces cannot declare classes, structs, interfaces, delegates, or enumerations");
 	  }
   break;
 case 229:
-#line 1953 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  }
   break;
@@ -2046,14 +1989,12 @@ case 230:
   case_230();
   break;
 case 232:
-#line 1983 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 234:
   case_234();
   break;
 case 235:
-#line 1999 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.DefaultValue;
 	  }
@@ -2062,95 +2003,72 @@ case 236:
   case_236();
   break;
 case 238:
-#line 2045 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.LogicalNot; }
   break;
 case 239:
-#line 2046 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.OnesComplement; }
   break;
 case 240:
-#line 2047 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Increment; }
   break;
 case 241:
-#line 2048 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Decrement; }
   break;
 case 242:
-#line 2049 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.True; }
   break;
 case 243:
-#line 2050 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.False; }
   break;
 case 244:
-#line 2052 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Addition; }
   break;
 case 245:
-#line 2053 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Subtraction; }
   break;
 case 246:
-#line 2055 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Multiply; }
   break;
 case 247:
-#line 2056 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {  yyVal = Operator.OpType.Division; }
   break;
 case 248:
-#line 2057 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Modulus; }
   break;
 case 249:
-#line 2058 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.BitwiseAnd; }
   break;
 case 250:
-#line 2059 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.BitwiseOr; }
   break;
 case 251:
-#line 2060 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.ExclusiveOr; }
   break;
 case 252:
-#line 2061 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.LeftShift; }
   break;
 case 253:
-#line 2062 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.RightShift; }
   break;
 case 254:
-#line 2063 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Equality; }
   break;
 case 255:
-#line 2064 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.Inequality; }
   break;
 case 256:
-#line 2065 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.GreaterThan; }
   break;
 case 257:
-#line 2066 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.LessThan; }
   break;
 case 258:
-#line 2067 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.GreaterThanOrEqual; }
   break;
 case 259:
-#line 2068 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = Operator.OpType.LessThanOrEqual; }
   break;
 case 260:
-#line 2075 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.DefaultValue;
 	  }
@@ -2159,7 +2077,6 @@ case 261:
   case_261();
   break;
 case 262:
-#line 2094 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.DefaultValue;
 	  }
@@ -2186,11 +2103,9 @@ case 269:
   case_269();
   break;
 case 271:
-#line 2200 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { current_block = null; yyVal = null; }
   break;
 case 274:
-#line 2212 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -2199,7 +2114,6 @@ case 275:
   case_275();
   break;
 case 276:
-#line 2222 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -2238,7 +2152,6 @@ case 287:
   case_287();
   break;
 case 289:
-#line 2345 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	++lexer.parsing_block;
 	  }
@@ -2247,13 +2160,11 @@ case 290:
   case_290();
   break;
 case 293:
-#line 2362 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_event_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
   break;
 case 294:
-#line 2366 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_event_field.AddDeclarator ((FieldDeclarator) yyVals[0+yyTop]);
 	  }
@@ -2262,7 +2173,6 @@ case 295:
   case_295();
   break;
 case 296:
-#line 2379 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_block;
 	  }
@@ -2274,7 +2184,6 @@ case 298:
   case_298();
   break;
 case 299:
-#line 2404 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -2325,7 +2234,6 @@ case 318:
   case_318();
   break;
 case 321:
-#line 2566 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	lbag.AddLocation (yyVals[-1+yyTop], GetLocation (yyVals[0+yyTop]));
 	  }
@@ -2346,7 +2254,6 @@ case 327:
   case_327();
   break;
 case 329:
-#line 2640 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out | ParameterModifierType.Params | ParameterModifierType.DefaultValue;
 	  }
@@ -2355,7 +2262,6 @@ case 330:
   case_330();
   break;
 case 331:
-#line 2659 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.ConstraintsParsing = false;
 	  }
@@ -2388,7 +2294,6 @@ case 344:
   case_344();
   break;
 case 345:
-#line 2759 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_generic_declaration = true;
 	  }
@@ -2433,13 +2338,11 @@ case 360:
   case_360();
   break;
 case 362:
-#line 2877 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
   break;
 case 363:
-#line 2884 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_generic_declaration = true;
 	  }
@@ -2454,7 +2357,6 @@ case 369:
   case_369();
   break;
 case 371:
-#line 2922 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast ((FullNamedExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
@@ -2463,7 +2365,6 @@ case 372:
   case_372();
   break;
 case 373:
-#line 2941 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast ((ATypeNameExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
@@ -2472,13 +2373,11 @@ case 374:
   case_374();
   break;
 case 375:
-#line 2950 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast ((FullNamedExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
   break;
 case 376:
-#line 2954 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast (new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[-1+yyTop])), (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
@@ -2493,63 +2392,48 @@ case 379:
   case_379();
   break;
 case 380:
-#line 2987 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Object, GetLocation (yyVals[0+yyTop])); }
   break;
 case 381:
-#line 2988 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.String, GetLocation (yyVals[0+yyTop])); }
   break;
 case 382:
-#line 2989 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Bool, GetLocation (yyVals[0+yyTop])); }
   break;
 case 383:
-#line 2990 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Decimal, GetLocation (yyVals[0+yyTop])); }
   break;
 case 384:
-#line 2991 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Float, GetLocation (yyVals[0+yyTop])); }
   break;
 case 385:
-#line 2992 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Double, GetLocation (yyVals[0+yyTop])); }
   break;
 case 387:
-#line 2997 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.SByte, GetLocation (yyVals[0+yyTop])); }
   break;
 case 388:
-#line 2998 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Byte, GetLocation (yyVals[0+yyTop])); }
   break;
 case 389:
-#line 2999 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Short, GetLocation (yyVals[0+yyTop])); }
   break;
 case 390:
-#line 3000 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.UShort, GetLocation (yyVals[0+yyTop])); }
   break;
 case 391:
-#line 3001 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Int, GetLocation (yyVals[0+yyTop])); }
   break;
 case 392:
-#line 3002 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.UInt, GetLocation (yyVals[0+yyTop])); }
   break;
 case 393:
-#line 3003 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Long, GetLocation (yyVals[0+yyTop])); }
   break;
 case 394:
-#line 3004 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.ULong, GetLocation (yyVals[0+yyTop])); }
   break;
 case 395:
-#line 3005 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new TypeExpression (compiler.BuiltinTypes.Char, GetLocation (yyVals[0+yyTop])); }
   break;
 case 416:
@@ -2559,22 +2443,18 @@ case 417:
   case_417();
   break;
 case 421:
-#line 3052 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new NullLiteral (GetLocation (yyVals[0+yyTop])); }
   break;
 case 422:
-#line 3056 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new BoolLiteral (compiler.BuiltinTypes, true, GetLocation (yyVals[0+yyTop])); }
   break;
 case 423:
-#line 3057 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new BoolLiteral (compiler.BuiltinTypes, false, GetLocation (yyVals[0+yyTop])); }
   break;
 case 428:
   case_428();
   break;
 case 429:
-#line 3090 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ParenthesizedExpression ((Expression) yyVals[-1+yyTop]);
 	  }
@@ -2592,7 +2472,6 @@ case 433:
   case_433();
   break;
 case 434:
-#line 3122 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new CompletionMemberAccess ((Expression) yyVals[-2+yyTop], null,GetLocation (yyVals[0+yyTop]));
 	  }
@@ -2601,7 +2480,6 @@ case 435:
   case_435();
   break;
 case 436:
-#line 3130 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new CompletionMemberAccess ((Expression) yyVals[-2+yyTop], null, lexer.Location);
 	  }
@@ -2616,7 +2494,6 @@ case 439:
   case_439();
   break;
 case 440:
-#line 3154 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 442:
@@ -2626,11 +2503,9 @@ case 443:
   case_443();
   break;
 case 444:
-#line 3177 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 445:
-#line 3181 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	}
@@ -2648,7 +2523,6 @@ case 449:
   case_449();
   break;
 case 450:
-#line 3213 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new CompletionElementInitializer (null, GetLocation (yyVals[0+yyTop]));
 	  }
@@ -2663,7 +2537,6 @@ case 453:
   case_453();
   break;
 case 456:
-#line 3241 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 458:
@@ -2682,7 +2555,6 @@ case 462:
   case_462();
   break;
 case 463:
-#line 3293 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Argument ((Expression) yyVals[0+yyTop]);
 	  }
@@ -2724,13 +2596,11 @@ case 479:
   case_479();
   break;
 case 480:
-#line 3388 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	yyVal = new Argument ((Expression) yyVals[0+yyTop]);
 	  }
   break;
 case 482:
-#line 3396 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new This (GetLocation (yyVals[0+yyTop]));
 	  }
@@ -2742,13 +2612,11 @@ case 484:
   case_484();
   break;
 case 485:
-#line 3416 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new UnaryMutator (UnaryMutator.Mode.PostIncrement, (Expression) yyVals[-1+yyTop], GetLocation (yyVals[0+yyTop]));
 	  }
   break;
 case 486:
-#line 3423 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new UnaryMutator (UnaryMutator.Mode.PostDecrement, (Expression) yyVals[-1+yyTop], GetLocation (yyVals[0+yyTop]));
 	  }
@@ -2775,7 +2643,6 @@ case 493:
   case_493();
   break;
 case 494:
-#line 3490 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		++lexer.parsing_type;
 	  }
@@ -2787,7 +2654,6 @@ case 496:
   case_496();
   break;
 case 499:
-#line 3517 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 501:
@@ -2818,25 +2684,21 @@ case 512:
   case_512();
   break;
 case 513:
-#line 3593 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = 2;
 	  }
   break;
 case 514:
-#line 3597 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = ((int) yyVals[-1+yyTop]) + 1;
 	  }
   break;
 case 515:
-#line 3604 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = null;
 	  }
   break;
 case 516:
-#line 3608 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -2854,7 +2716,6 @@ case 520:
   case_520();
   break;
 case 521:
-#line 3651 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	lexer.TypeOfParsing = true;
 	  }
@@ -2899,37 +2760,31 @@ case 536:
   case_536();
   break;
 case 537:
-#line 3765 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		start_anonymous (false, (ParametersCompiled) yyVals[0+yyTop], false, GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 538:
-#line 3769 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 	  }
   break;
 case 539:
-#line 3773 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		start_anonymous (false, (ParametersCompiled) yyVals[0+yyTop], true, GetLocation (yyVals[-2+yyTop]));
 	  }
   break;
 case 540:
-#line 3777 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 	  }
   break;
 case 541:
-#line 3784 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = ParametersCompiled.Undefined;
 	  }
   break;
 case 543:
-#line 3792 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out;
 	  }
@@ -2941,13 +2796,11 @@ case 545:
   case_545();
   break;
 case 547:
-#line 3816 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Unary (Unary.Operator.LogicalNot, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 548:
-#line 3820 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Unary (Unary.Operator.OnesComplement, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
@@ -2959,37 +2812,31 @@ case 550:
   case_550();
   break;
 case 552:
-#line 3856 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { 
 	  	yyVal = new Unary (Unary.Operator.UnaryPlus, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 553:
-#line 3860 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { 
 		yyVal = new Unary (Unary.Operator.UnaryNegation, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 554:
-#line 3864 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new UnaryMutator (UnaryMutator.Mode.PreIncrement, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 555:
-#line 3868 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new UnaryMutator (UnaryMutator.Mode.PreDecrement, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 556:
-#line 3872 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Indirection ((Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 557:
-#line 3876 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Unary (Unary.Operator.AddressOf, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
@@ -3010,13 +2857,11 @@ case 564:
   case_564();
   break;
 case 565:
-#line 3913 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new As ((Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 566:
-#line 3917 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Is ((Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
@@ -3118,14 +2963,12 @@ case 608:
   case_608();
   break;
 case 609:
-#line 4143 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = ParametersCompiled.EmptyReadOnlyParameters; }
   break;
 case 610:
   case_610();
   break;
 case 613:
-#line 4158 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		start_block (Location.Null);
 	  }
@@ -3149,7 +2992,6 @@ case 620:
   case_620();
   break;
 case 621:
-#line 4203 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out;
 	  }
@@ -3161,7 +3003,6 @@ case 623:
   case_623();
   break;
 case 624:
-#line 4217 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out;	  
 	  }
@@ -3173,7 +3014,6 @@ case 626:
   case_626();
   break;
 case 632:
-#line 4242 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ArglistAccess (GetLocation (yyVals[0+yyTop]));
 	  }
@@ -3188,13 +3028,11 @@ case 635:
   case_635();
   break;
 case 637:
-#line 4271 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new BooleanExpression ((Expression) yyVals[0+yyTop]);
 	  }
   break;
 case 638:
-#line 4284 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.ConstraintsParsing = true;
 	  }
@@ -3212,18 +3050,15 @@ case 642:
   case_642();
   break;
 case 643:
-#line 4325 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 644:
-#line 4327 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = yyVals[0+yyTop]; }
   break;
 case 645:
   case_645();
   break;
 case 646:
-#line 4340 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		lexer.parsing_modifiers = false;		
 	  }
@@ -3277,7 +3112,6 @@ case 663:
   case_663();
   break;
 case 665:
-#line 4451 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_type.AddBasesForPart ((List<FullNamedExpression>) yyVals[0+yyTop]);
 	 }
@@ -3286,7 +3120,6 @@ case 666:
   case_666();
   break;
 case 668:
-#line 4465 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -3316,19 +3149,16 @@ case 676:
   case_676();
   break;
 case 677:
-#line 4557 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new SpecialContraintExpr (SpecialConstraint.Class, GetLocation (yyVals[0+yyTop]));
 	  }
   break;
 case 678:
-#line 4561 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new SpecialContraintExpr (SpecialConstraint.Struct, GetLocation (yyVals[0+yyTop]));
 	  }
   break;
 case 679:
-#line 4568 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = Variance.None;
 	  }
@@ -3337,13 +3167,11 @@ case 680:
   case_680();
   break;
 case 681:
-#line 4582 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = Variance.Covariant;
 	  }
   break;
 case 682:
-#line 4586 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = Variance.Contravariant;
 	  }
@@ -3352,7 +3180,6 @@ case 683:
   case_683();
   break;
 case 684:
-#line 4611 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -3370,13 +3197,11 @@ case 688:
   case_688();
   break;
 case 693:
-#line 4655 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block.AddStatement ((Statement) yyVals[0+yyTop]);
 	  }
   break;
 case 694:
-#line 4659 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block.AddStatement ((Statement) yyVals[0+yyTop]);
 	  }
@@ -3385,13 +3210,11 @@ case 696:
   case_696();
   break;
 case 699:
-#line 4683 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block.AddStatement ((Statement) yyVals[0+yyTop]);
 	  }
   break;
 case 700:
-#line 4687 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block.AddStatement ((Statement) yyVals[0+yyTop]);
 	  }
@@ -3424,13 +3247,11 @@ case 739:
   case_739();
   break;
 case 740:
-#line 4831 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast ((FullNamedExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
   break;
 case 741:
-#line 4835 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new ComposedCast (new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[-1+yyTop])), (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
@@ -3442,7 +3263,6 @@ case 744:
   case_744();
   break;
 case 745:
-#line 4856 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = ComposedTypeSpecifier.CreatePointer (GetLocation (yyVals[0+yyTop]));
 	  }
@@ -3478,13 +3298,11 @@ case 762:
   case_762();
   break;
 case 763:
-#line 4963 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		report.Error (145, lexer.Location, "A const field requires a value to be provided");
 	  }
   break;
 case 764:
-#line 4967 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_variable.Initializer = (Expression) yyVals[0+yyTop];
 	  }
@@ -3502,18 +3320,15 @@ case 773:
   case_773();
   break;
 case 774:
-#line 5012 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = yyVals[-1+yyTop]; }
   break;
 case 775:
   case_775();
   break;
 case 776:
-#line 5022 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = yyVals[-1+yyTop]; }
   break;
 case 777:
-#line 5023 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = yyVals[-1+yyTop]; }
   break;
 case 778:
@@ -3535,7 +3350,6 @@ case 785:
   case_785();
   break;
 case 786:
-#line 5098 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		start_block (GetLocation (yyVals[0+yyTop]));
 	  }
@@ -3559,13 +3373,11 @@ case 793:
   case_793();
   break;
 case 794:
-#line 5149 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block = current_block.CreateSwitchBlock (lexer.Location);
 	  }
   break;
 case 795:
-#line 5153 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new SwitchSection ((List<SwitchLabel>) yyVals[-2+yyTop], current_block);
 	  }
@@ -3583,7 +3395,6 @@ case 799:
   case_799();
   break;
 case 800:
-#line 5187 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new SwitchLabel (null, GetLocation (yyVals[0+yyTop]));
 	  }
@@ -3607,7 +3418,6 @@ case 810:
   case_810();
   break;
 case 811:
-#line 5247 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
@@ -3625,7 +3435,6 @@ case 815:
   case_815();
   break;
 case 816:
-#line 5288 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Tuple<Location,Location> (GetLocation (yyVals[-2+yyTop]), (Location) yyVals[0+yyTop]);
 	  }
@@ -3640,11 +3449,9 @@ case 819:
   case_819();
   break;
 case 821:
-#line 5316 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { lexer.putback ('}'); }
   break;
 case 822:
-#line 5320 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new EmptyStatement (lexer.Location); }
   break;
 case 824:
@@ -3654,11 +3461,9 @@ case 825:
   case_825();
   break;
 case 827:
-#line 5341 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = null; }
   break;
 case 829:
-#line 5346 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   { yyVal = new EmptyStatement (lexer.Location); }
   break;
 case 833:
@@ -3719,7 +3524,6 @@ case 857:
   case_857();
   break;
 case 860:
-#line 5565 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new TryCatch ((Block) yyVals[-1+yyTop], (List<Catch>) yyVals[0+yyTop], GetLocation (yyVals[-2+yyTop]), false);
 	  }
@@ -3740,7 +3544,6 @@ case 865:
   case_865();
   break;
 case 868:
-#line 5614 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Catch ((Block) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
@@ -3749,7 +3552,6 @@ case 869:
   case_869();
   break;
 case 870:
-#line 5633 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[-1+yyTop];
 	  }
@@ -3761,13 +3563,11 @@ case 872:
   case_872();
   break;
 case 873:
-#line 5669 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Checked ((Block) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
   break;
 case 874:
-#line 5676 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Unchecked ((Block) yyVals[0+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  }
@@ -3776,7 +3576,6 @@ case 875:
   case_875();
   break;
 case 876:
-#line 5686 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Unsafe ((Block) yyVals[0+yyTop], GetLocation (yyVals[-2+yyTop]));
 	  }
@@ -3815,7 +3614,6 @@ case 888:
   case_888();
   break;
 case 889:
-#line 5789 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		Error_MissingInitializer (lexer.Location);
 	  }
@@ -3848,7 +3646,6 @@ case 898:
   case_898();
   break;
 case 899:
-#line 5889 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3857,7 +3654,6 @@ case 900:
   case_900();
   break;
 case 901:
-#line 5904 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3878,7 +3674,6 @@ case 907:
   case_907();
   break;
 case 908:
-#line 5966 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3899,7 +3694,6 @@ case 914:
   case_914();
   break;
 case 920:
-#line 6020 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3908,7 +3702,6 @@ case 921:
   case_921();
   break;
 case 922:
-#line 6039 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 	  	current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3941,13 +3734,11 @@ case 931:
   case_931();
   break;
 case 933:
-#line 6183 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[0+yyTop];
 	  }
   break;
 case 934:
-#line 6190 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  }
@@ -3968,7 +3759,6 @@ case 941:
   case_941();
   break;
 case 942:
-#line 6236 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Linq.OrderByAscending ((Linq.QueryBlock) current_block, (Expression)yyVals[0+yyTop]);	
 	  }
@@ -3980,7 +3770,6 @@ case 944:
   case_944();
   break;
 case 945:
-#line 6253 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new Linq.ThenByAscending ((Linq.QueryBlock) current_block, (Expression)yyVals[0+yyTop]);	
 	  }
@@ -4004,13 +3793,11 @@ case 954:
   case_954();
   break;
 case 962:
-#line 6375 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		module.DocumentationBuilder.ParsedName = (MemberName) yyVals[0+yyTop];
 	  }
   break;
 case 963:
-#line 6382 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		module.DocumentationBuilder.ParsedParameters = (List<DocumentationParameter>)yyVals[0+yyTop];
 	  }
@@ -4022,13 +3809,11 @@ case 965:
   case_965();
   break;
 case 966:
-#line 6399 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new MemberName ((MemberName) yyVals[-2+yyTop], MemberCache.IndexerNameAlias, Location.Null);
 	  }
   break;
 case 967:
-#line 6403 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out;
 	  }
@@ -4046,25 +3831,21 @@ case 971:
   case_971();
   break;
 case 973:
-#line 6439 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new MemberName (((MemberName) yyVals[-2+yyTop]), (MemberName) yyVals[0+yyTop]);
 	  }
   break;
 case 975:
-#line 6447 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		valid_param_mod = ParameterModifierType.Ref | ParameterModifierType.Out;
 	  }
   break;
 case 976:
-#line 6451 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = yyVals[-1+yyTop];
 	  }
   break;
 case 977:
-#line 6458 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
   {
 		yyVal = new List<DocumentationParameter> (0);
 	  }
@@ -4078,7 +3859,6 @@ case 980:
 case 981:
   case_981();
   break;
-#line default
         }
         yyTop -= yyLen[yyN];
         yyState = yyStates[yyTop];
@@ -4114,7 +3894,6 @@ case 981:
  All more than 3 lines long rules are wrapped into a method
 */
 void case_6()
-#line 384 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {
 			Attributes attrs = (Attributes) yyVals[0+yyTop];
@@ -4126,7 +3905,6 @@ void case_6()
 	  }
 
 void case_8()
-#line 398 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyToken == Token.EXTERN_ALIAS)
 			report.Error (439, lexer.Location, "An extern alias declaration must precede all other elements");
@@ -4135,7 +3913,6 @@ void case_8()
 	  }
 
 void case_13()
-#line 418 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		string s = lt.Value;
@@ -4158,14 +3935,12 @@ void case_13()
 	  }
 
 void case_17()
-#line 451 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			Lexer.doc_state = XmlCommentState.Allowed;
 	  }
 
 void case_18()
-#line 459 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var un = new UsingNamespace ((ATypeNameExpression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		current_namespace.AddUsing (un);
@@ -4174,7 +3949,6 @@ void case_18()
 	  }
 
 void case_19()
-#line 466 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		if (lang_version != LanguageVersion.ISO_1 && lt.Value == "global") {
@@ -4189,14 +3963,12 @@ void case_19()
 	  }
 
 void case_20()
-#line 479 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = null;
 	 }
 
 void case_21()
-#line 492 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Attributes attrs = (Attributes) yyVals[-2+yyTop];
 		var name = (MemberName) yyVals[0+yyTop];
@@ -4226,14 +3998,12 @@ void case_21()
 	  }
 
 void case_22()
-#line 520 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			Lexer.doc_state = XmlCommentState.Allowed;
 	  }
 
 void case_23()
-#line 525 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null)
 			lbag.AddLocation (current_container, GetLocation (yyVals[-9+yyTop]), GetLocation (yyVals[-6+yyTop]), GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
@@ -4244,7 +4014,6 @@ void case_23()
 	  }
 
 void case_24()
-#line 534 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1514, lexer.Location, "Unexpected symbol `{0}', expecting `.' or `{{'", GetSymbolName (yyToken));
 
@@ -4255,28 +4024,24 @@ void case_24()
 	  }
 
 void case_25()
-#line 546 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = new MemberName (lt.Value, lt.Location);
 	  }
 
 void case_26()
-#line 551 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = new MemberName ((MemberName) yyVals[-2+yyTop], lt.Value, lt.Location);		
 	  }
 
 void case_27()
-#line 556 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new MemberName ("<invalid>", lexer.Location);
 	  }
 
 void case_40()
-#line 594 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {
 			TypeContainer ds = (TypeContainer)yyVals[0+yyTop];
@@ -4297,7 +4062,6 @@ void case_40()
 	  }
 
 void case_42()
-#line 616 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_namespace.UnattachedAttributes = (Attributes) yyVals[-1+yyTop];
 		report.Error (1518, lexer.Location, "Attributes must be attached to class, delegate, enum, interface or struct");
@@ -4305,14 +4069,12 @@ void case_42()
 	  }
 
 void case_50()
-#line 649 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var sect = (List<Attribute>) yyVals[0+yyTop];
 		yyVal = new Attributes (sect);
 	  }
 
 void case_51()
-#line 654 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Attributes attrs = yyVals[-1+yyTop] as Attributes;
 		var sect = (List<Attribute>) yyVals[0+yyTop];
@@ -4324,14 +4086,12 @@ void case_51()
 	  }
 
 void case_53()
-#line 671 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_attribute_section = false;
 		yyVal = yyVals[0+yyTop];
 	  }
 
 void case_54()
-#line 679 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_attr_target = (string) yyVals[-1+yyTop];
 		if (current_attr_target == "assembly" || current_attr_target == "module") {
@@ -4340,7 +4100,6 @@ void case_54()
 	  }
 
 void case_55()
-#line 686 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* when attribute target is invalid*/
 		if (current_attr_target == string.Empty)
@@ -4353,14 +4112,12 @@ void case_55()
  	  }
 
 void case_57()
-#line 704 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = CheckAttributeTarget (lt.Value, lt.Location);
 	  }
 
 void case_60()
-#line 711 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyToken == Token.IDENTIFIER) {
 			Error_SyntaxError (yyToken);
@@ -4372,7 +4129,6 @@ void case_60()
 	  }
 
 void case_62()
-#line 728 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var attrs = (List<Attribute>) yyVals[-2+yyTop];
 		attrs.Add ((Attribute) yyVals[0+yyTop]);
@@ -4381,7 +4137,6 @@ void case_62()
 	  }
 
 void case_64()
-#line 742 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		
@@ -4394,7 +4149,6 @@ void case_64()
 	  }
 
 void case_69()
-#line 770 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Arguments a = new Arguments (4);
 		a.Add ((Argument) yyVals[0+yyTop]);
@@ -4402,7 +4156,6 @@ void case_69()
 	  }
 
 void case_70()
-#line 776 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Arguments a = new Arguments (4);
 		a.Add ((Argument) yyVals[0+yyTop]);  
@@ -4410,7 +4163,6 @@ void case_70()
 	  }
 
 void case_71()
-#line 782 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments[] o = (Arguments[]) yyVals[-2+yyTop];
 		if (o [1] != null) {
@@ -4426,7 +4178,6 @@ void case_71()
 	  }
 
 void case_72()
-#line 796 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments[] o = (Arguments[]) yyVals[-2+yyTop];
 		if (o [1] == null) {
@@ -4437,7 +4188,6 @@ void case_72()
 	  }
 
 void case_76()
-#line 820 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 	  	var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
@@ -4446,7 +4196,6 @@ void case_76()
 	  }
 
 void case_77()
-#line 830 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version <= LanguageVersion.V_3)
 			FeatureIsNotAvailable (GetLocation (yyVals[-3+yyTop]), "named argument");
@@ -4460,7 +4209,6 @@ void case_77()
 	  }
 
 void case_96()
-#line 884 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1519, lexer.Location, "Unexpected symbol `{0}' in class, struct, or interface member declaration",
 			GetSymbolName (yyToken));
@@ -4469,7 +4217,6 @@ void case_96()
 	  }
 
 void case_99()
-#line 906 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.ConstraintsParsing = false;
 
@@ -4485,14 +4232,12 @@ void case_99()
 	  }
 
 void case_100()
-#line 920 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			Lexer.doc_state = XmlCommentState.Allowed;
 	  }
 
 void case_101()
-#line 925 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_declaration;
 		if (doc_support)
@@ -4500,14 +4245,12 @@ void case_101()
 	  }
 
 void case_102()
-#line 931 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lbag.AppendToMember (current_container, GetLocation (yyVals[-5+yyTop]), GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 		yyVal = pop_current_class ();
 	  }
 
 void case_104()
-#line 945 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		var mod = (Modifiers) yyVals[-3+yyTop];
@@ -4522,7 +4265,6 @@ void case_104()
 	  }
 
 void case_105()
-#line 958 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			current_field.DocComment = Lexer.consume_doc_comment ();
@@ -4535,7 +4277,6 @@ void case_105()
 	  }
 
 void case_106()
-#line 971 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -4543,7 +4284,6 @@ void case_106()
 	  }
 
 void case_111()
-#line 996 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 	  	yyVal = new FieldDeclarator (new SimpleMemberName (lt.Value, lt.Location), (ConstInitializer) yyVals[0+yyTop]);
@@ -4551,21 +4291,18 @@ void case_111()
 	  }
 
 void case_113()
-#line 1009 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		yyVal = new ConstInitializer (current_field, (Expression) yyVals[0+yyTop], GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_114()
-#line 1014 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (145, lexer.Location, "A const field requires a value to be provided");
 		yyVal = null;
 	  }
 
 void case_117()
-#line 1029 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	lexer.parsing_generic_declaration = false;
 
@@ -4580,7 +4317,6 @@ void case_117()
 	  }
 
 void case_118()
-#line 1044 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		if (doc_support) {
 			current_field.DocComment = Lexer.consume_doc_comment ();
@@ -4593,7 +4329,6 @@ void case_118()
 	  }
 
 void case_119()
-#line 1057 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-2+yyTop]), "fixed size buffers");
@@ -4606,7 +4341,6 @@ void case_119()
 	  }
 
 void case_120()
-#line 1068 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			current_field.DocComment = Lexer.consume_doc_comment ();
@@ -4620,7 +4354,6 @@ void case_120()
 	  }
 
 void case_123()
-#line 1091 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	++lexer.parsing_block;
 		current_local_parameters = ParametersCompiled.EmptyReadOnlyParameters;
@@ -4628,7 +4361,6 @@ void case_123()
 	  }
 
 void case_124()
-#line 1097 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 		current_field.Initializer = (Expression) yyVals[0+yyTop];
@@ -4637,7 +4369,6 @@ void case_124()
 	  }
 
 void case_129()
-#line 1123 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 	  	yyVal = new FieldDeclarator (new SimpleMemberName (lt.Value, lt.Location), null);
@@ -4645,7 +4376,6 @@ void case_129()
 	  }
 
 void case_131()
-#line 1133 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];	  
@@ -4654,7 +4384,6 @@ void case_131()
 	  }
 
 void case_136()
-#line 1159 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];	  
 		yyVal = new FieldDeclarator (new SimpleMemberName (lt.Value, lt.Location), (ConstInitializer) yyVals[0+yyTop]);
@@ -4662,7 +4391,6 @@ void case_136()
 	  }
 
 void case_138()
-#line 1172 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		yyVal = new ConstInitializer (current_field, (Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
@@ -4670,14 +4398,12 @@ void case_138()
 	  }
 
 void case_139()
-#line 1178 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (443, lexer.Location, "Value or constant expected");
 		yyVal = null;
 	  }
 
 void case_142()
-#line 1188 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* It has to be here for the parent to safely restore artificial block*/
 	  	Error_SyntaxError (yyToken);
@@ -4685,7 +4411,6 @@ void case_142()
 	  }
 
 void case_143()
-#line 1197 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			Lexer.doc_state = XmlCommentState.NotAllowed;
@@ -4694,7 +4419,6 @@ void case_143()
 	  }
 
 void case_144()
-#line 1204 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Method method = (Method) yyVals[-2+yyTop];
 		method.Block = (ToplevelBlock) yyVals[0+yyTop];
@@ -4721,7 +4445,6 @@ void case_144()
 	  }
 
 void case_146()
-#line 1239 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 		MemberName name = (MemberName) yyVals[-4+yyTop];
@@ -4745,7 +4468,6 @@ void case_146()
 	  }
 
 void case_147()
-#line 1261 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.ConstraintsParsing = false;
 
@@ -4758,14 +4480,12 @@ void case_147()
 	  }
 
 void case_149()
-#line 1280 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_generic_declaration = false;
 	  	valid_param_mod = ParameterModifierType.All;
 	  }
 
 void case_151()
-#line 1289 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.ConstraintsParsing = false;
 		valid_param_mod = 0;
@@ -4793,7 +4513,6 @@ void case_151()
 	  }
 
 void case_152()
-#line 1318 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		MemberName name = (MemberName) yyVals[-3+yyTop];
 		report.Error (1585, name.Location, 
@@ -4813,7 +4532,6 @@ void case_152()
 	  }
 
 void case_153()
-#line 1339 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		current_local_parameters = ParametersCompiled.Undefined;
@@ -4831,14 +4549,12 @@ void case_153()
 	  }
 
 void case_158()
-#line 1368 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars_list = (List<Parameter>) yyVals[0+yyTop];
 	  	yyVal = new ParametersCompiled (pars_list.ToArray ());
 	  }
 
 void case_159()
-#line 1373 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars_list = (List<Parameter>) yyVals[-2+yyTop];
 		pars_list.Add ((Parameter) yyVals[0+yyTop]);
@@ -4847,7 +4563,6 @@ void case_159()
 	  }
 
 void case_160()
-#line 1380 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars_list = (List<Parameter>) yyVals[-2+yyTop];
 		pars_list.Add (new ArglistParameter (GetLocation (yyVals[0+yyTop])));
@@ -4855,7 +4570,6 @@ void case_160()
 	  }
 
 void case_161()
-#line 1386 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-2+yyTop] != null)
 			report.Error (231, ((Parameter) yyVals[-2+yyTop]).Location, "A params parameter must be the last parameter in a formal parameter list");
@@ -4864,7 +4578,6 @@ void case_161()
 	  }
 
 void case_162()
-#line 1393 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-2+yyTop] != null)
 			report.Error (231, ((Parameter) yyVals[-2+yyTop]).Location, "A params parameter must be the last parameter in a formal parameter list");
@@ -4876,7 +4589,6 @@ void case_162()
 	  }
 
 void case_163()
-#line 1403 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (257, GetLocation (yyVals[-2+yyTop]), "An __arglist parameter must be the last parameter in a formal parameter list");
 
@@ -4884,7 +4596,6 @@ void case_163()
 	  }
 
 void case_164()
-#line 1409 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (257, GetLocation (yyVals[-2+yyTop]), "An __arglist parameter must be the last parameter in a formal parameter list");
 
@@ -4895,14 +4606,12 @@ void case_164()
 	  }
 
 void case_167()
-#line 1426 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = ParametersCompiled.EmptyReadOnlyParameters;
 	  }
 
 void case_168()
-#line 1434 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		parameters_bucket.Clear ();
 		Parameter p = (Parameter) yyVals[0+yyTop];
@@ -4913,7 +4622,6 @@ void case_168()
 	  }
 
 void case_169()
-#line 1443 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars = (List<Parameter>) yyVals[-2+yyTop];
 		Parameter p = (Parameter) yyVals[0+yyTop];
@@ -4933,14 +4641,12 @@ void case_169()
 	  }
 
 void case_170()
-#line 1467 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = new Parameter ((FullNamedExpression) yyVals[-1+yyTop], lt.Value, (Parameter.Modifier) yyVals[-2+yyTop], (Attributes) yyVals[-3+yyTop], lt.Location);
 	  }
 
 void case_171()
-#line 1475 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		report.Error (1552, lt.Location, "Array type specifier, [], must appear before parameter name");
@@ -4948,7 +4654,6 @@ void case_171()
 	  }
 
 void case_172()
-#line 1481 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  	Location l = GetLocation (yyVals[0+yyTop]);
@@ -4956,7 +4661,6 @@ void case_172()
 	  }
 
 void case_173()
-#line 1490 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  	Location l = GetLocation (yyVals[0+yyTop]);
@@ -4964,7 +4668,6 @@ void case_173()
 	  }
 
 void case_175()
-#line 1504 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 		if (lang_version <= LanguageVersion.V_3) {
@@ -5003,7 +4706,6 @@ void case_175()
 	  }
 
 void case_179()
-#line 1553 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Parameter.Modifier p2 = (Parameter.Modifier)yyVals[0+yyTop];
   		Parameter.Modifier mod = (Parameter.Modifier)yyVals[-1+yyTop] | p2;
@@ -5026,7 +4728,6 @@ void case_179()
 	  }
 
 void case_180()
-#line 1577 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if ((valid_param_mod & ParameterModifierType.Ref) == 0)
 	  		Error_ParameterModifierNotValid ("ref", GetLocation (yyVals[0+yyTop]));
@@ -5035,7 +4736,6 @@ void case_180()
 	  }
 
 void case_181()
-#line 1584 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if ((valid_param_mod & ParameterModifierType.Out) == 0)
 	  		Error_ParameterModifierNotValid ("out", GetLocation (yyVals[0+yyTop]));
@@ -5044,7 +4744,6 @@ void case_181()
 	  }
 
 void case_182()
-#line 1591 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if ((valid_param_mod & ParameterModifierType.This) == 0)
 	  		Error_ParameterModifierNotValid ("this", GetLocation (yyVals[0+yyTop]));
@@ -5056,14 +4755,12 @@ void case_182()
 	  }
 
 void case_183()
-#line 1604 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = new ParamsParameter ((FullNamedExpression) yyVals[-1+yyTop], lt.Value, (Attributes) yyVals[-3+yyTop], lt.Location);
 	  }
 
 void case_184()
-#line 1609 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1751, GetLocation (yyVals[-4+yyTop]), "Cannot specify a default value for a parameter array");
 		
@@ -5072,7 +4769,6 @@ void case_184()
 	  }
 
 void case_185()
-#line 1616 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -5080,14 +4776,12 @@ void case_185()
 	  }
 
 void case_186()
-#line 1625 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if ((valid_param_mod & ParameterModifierType.Params) == 0)
 			report.Error (1670, (GetLocation (yyVals[0+yyTop])), "The `params' modifier is not allowed in current context");
 	  }
 
 void case_187()
-#line 1630 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Parameter.Modifier mod = (Parameter.Modifier)yyVals[0+yyTop];
 		if ((mod & Parameter.Modifier.This) != 0) {
@@ -5098,21 +4792,18 @@ void case_187()
 	  }
 
 void case_189()
-#line 1646 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if ((valid_param_mod & ParameterModifierType.Arglist) == 0)
 	  		report.Error (1669, GetLocation (yyVals[0+yyTop]), "__arglist is not valid in this context");
 	  }
 
 void case_190()
-#line 1657 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			tmpComment = Lexer.consume_doc_comment ();
 	  }
 
 void case_191()
-#line 1662 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var type = (FullNamedExpression) yyVals[-3+yyTop];
 		current_property = new Property (current_type, type, (Modifiers) yyVals[-4+yyTop],
@@ -5128,7 +4819,6 @@ void case_191()
 	  }
 
 void case_192()
-#line 1676 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.PropertyParsing = false;
 		
@@ -5137,14 +4827,12 @@ void case_192()
 	  }
 
 void case_193()
-#line 1683 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lbag.AppendToMember (current_property, GetLocation (yyVals[0+yyTop]));
 		current_property = null;
 	  }
 
 void case_195()
-#line 1697 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 		var type = (FullNamedExpression) yyVals[-5+yyTop];
@@ -5171,7 +4859,6 @@ void case_195()
 	  }
 
 void case_197()
-#line 1726 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (current_property.AccessorFirst != null && current_property.AccessorFirst.Block == null)
 			((Indexer) current_property).ParameterInfo.CheckParameters (current_property);
@@ -5184,7 +4871,6 @@ void case_197()
 	  }
 
 void case_202()
-#line 1745 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyToken == Token.CLOSE_BRACE) {
 	  		report.Error (548, lexer.Location, "`{0}': property or indexer must have at least one accessor", current_property.GetSignatureForError ());
@@ -5197,7 +4883,6 @@ void case_202()
 	  }
 
 void case_203()
-#line 1759 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-1+yyTop] != ModifierNone && lang_version == LanguageVersion.ISO_1) {
 			FeatureIsNotAvailable (GetLocation (yyVals[-1+yyTop]), "access modifiers on properties");
@@ -5221,7 +4906,6 @@ void case_203()
 	  }
 
 void case_204()
-#line 1781 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyVals[0+yyTop] != null) {
 	  		current_property.Get.Block = (ToplevelBlock) yyVals[0+yyTop];			
@@ -5241,7 +4925,6 @@ void case_204()
 	  }
 
 void case_205()
-#line 1802 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-1+yyTop] != ModifierNone && lang_version == LanguageVersion.ISO_1) {
 			FeatureIsNotAvailable (GetLocation (yyVals[-1+yyTop]), "access modifiers on properties");
@@ -5270,7 +4953,6 @@ void case_205()
 	  }
 
 void case_206()
-#line 1829 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {		
 			current_property.Set.Block = (ToplevelBlock) yyVals[0+yyTop];
@@ -5290,28 +4972,24 @@ void case_206()
 	  }
 
 void case_208()
-#line 1851 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* TODO: lbag*/
 	  	yyVal = null;
 	  }
 
 void case_209()
-#line 1856 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (1043, yyToken, "Invalid accessor body");
 	  	yyVal = null;
 	  }
 
 void case_211()
-#line 1871 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		push_current_container (new Interface (current_container, (MemberName) yyVals[0+yyTop], (Modifiers) yyVals[-4+yyTop], (Attributes) yyVals[-5+yyTop]), yyVals[-3+yyTop]);
 		lbag.AddMember (current_container, mod_locations, GetLocation (yyVals[-2+yyTop]));		
 	  }
 
 void case_212()
-#line 1877 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.ConstraintsParsing = false;
 
@@ -5327,7 +5005,6 @@ void case_212()
 	  }
 
 void case_213()
-#line 1891 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_declaration;	  
 		if (doc_support)
@@ -5335,14 +5012,12 @@ void case_213()
 	  }
 
 void case_214()
-#line 1897 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	    lbag.AppendToMember (current_container, GetLocation (yyVals[-4+yyTop]), GetLocation (yyVals[-2+yyTop]));
 		yyVal = pop_current_class ();
 	  }
 
 void case_230()
-#line 1955 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		OperatorDeclaration decl = (OperatorDeclaration) yyVals[-2+yyTop];
 		if (decl != null) {
@@ -5369,14 +5044,12 @@ void case_230()
 	  }
 
 void case_234()
-#line 1989 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (590, GetLocation (yyVals[0+yyTop]), "User-defined operators cannot return void");
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_236()
-#line 2001 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 
@@ -5418,7 +5091,6 @@ void case_236()
 	  }
 
 void case_261()
-#line 2077 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 
@@ -5435,7 +5107,6 @@ void case_261()
 	  }
 
 void case_263()
-#line 2096 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 		
@@ -5452,7 +5123,6 @@ void case_263()
 	  }
 
 void case_264()
-#line 2111 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (yyToken);
 		current_local_parameters = ParametersCompiled.EmptyReadOnlyParameters;
@@ -5460,7 +5130,6 @@ void case_264()
 	  }
 
 void case_265()
-#line 2117 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (yyToken);
 		current_local_parameters = ParametersCompiled.EmptyReadOnlyParameters;
@@ -5468,7 +5137,6 @@ void case_265()
 	  }
 
 void case_266()
-#line 2127 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		Constructor c = (Constructor) yyVals[-1+yyTop];
 		c.Block = (ToplevelBlock) yyVals[0+yyTop];
@@ -5482,7 +5150,6 @@ void case_266()
 	  }
 
 void case_267()
-#line 2144 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			tmpComment = Lexer.consume_doc_comment ();
@@ -5493,7 +5160,6 @@ void case_267()
 	  }
 
 void case_268()
-#line 2153 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 		current_local_parameters = (ParametersCompiled) yyVals[-1+yyTop];
@@ -5524,7 +5190,6 @@ void case_268()
 	  }
 
 void case_269()
-#line 2182 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {
 			var c = (Constructor) yyVals[-1+yyTop];
@@ -5541,7 +5206,6 @@ void case_269()
 	  }
 
 void case_275()
-#line 2214 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 		yyVal = new ConstructorBaseInitializer ((Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-4+yyTop]));
@@ -5549,7 +5213,6 @@ void case_275()
 	  }
 
 void case_277()
-#line 2224 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 		yyVal = new ConstructorThisInitializer ((Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-4+yyTop]));
@@ -5557,7 +5220,6 @@ void case_277()
 	  }
 
 void case_278()
-#line 2230 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);	  
 		yyVal = new ConstructorThisInitializer (null, GetLocation (yyVals[0+yyTop]));
@@ -5565,14 +5227,12 @@ void case_278()
 	  }
 
 void case_279()
-#line 2236 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = null;
 	  }
 
 void case_280()
-#line 2244 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			tmpComment = Lexer.consume_doc_comment ();
@@ -5583,7 +5243,6 @@ void case_280()
 	  }
 
 void case_281()
-#line 2253 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		if (lt.Value != current_container.MemberName.Name){
@@ -5605,7 +5264,6 @@ void case_281()
 	  }
 
 void case_282()
-#line 2278 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_event_field = new EventField (current_type, (FullNamedExpression) yyVals[-1+yyTop], (Modifiers) yyVals[-3+yyTop], (MemberName) yyVals[0+yyTop], (Attributes) yyVals[-4+yyTop]);
 		current_type.AddMember (current_event_field);
@@ -5619,7 +5277,6 @@ void case_282()
 	  }
 
 void case_283()
-#line 2292 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			current_event_field.DocComment = Lexer.consume_doc_comment ();
@@ -5631,7 +5288,6 @@ void case_283()
 	  }
 
 void case_284()
-#line 2305 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_event = new EventProperty (current_type, (FullNamedExpression) yyVals[-2+yyTop], (Modifiers) yyVals[-4+yyTop], (MemberName) yyVals[-1+yyTop], (Attributes) yyVals[-5+yyTop]);
 		current_type.AddMember (current_event);
@@ -5641,7 +5297,6 @@ void case_284()
 	  }
 
 void case_285()
-#line 2313 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (current_container.Kind == MemberKind.Interface)
 			report.Error (69, GetLocation (yyVals[-2+yyTop]), "Event in interface cannot have add or remove accessors");
@@ -5650,7 +5305,6 @@ void case_285()
 	  }
 
 void case_286()
-#line 2320 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			current_event.DocComment = Lexer.consume_doc_comment ();
@@ -5663,7 +5317,6 @@ void case_286()
 	  }
 
 void case_287()
-#line 2333 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -5671,14 +5324,12 @@ void case_287()
 	  }
 
 void case_290()
-#line 2347 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	--lexer.parsing_block;
 		current_event_field.Initializer = (Expression) yyVals[0+yyTop];
 	  }
 
 void case_295()
-#line 2371 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 	  	yyVal = new FieldDeclarator (new SimpleMemberName (lt.Value, lt.Location), null);
@@ -5686,7 +5337,6 @@ void case_295()
 	  }
 
 void case_297()
-#line 2381 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];	  
@@ -5695,7 +5345,6 @@ void case_297()
 	  }
 
 void case_298()
-#line 2390 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (current_container.Kind == MemberKind.Interface) {
 			report.Error (68, lexer.Location, "`{0}': event in interface cannot have an initializer",
@@ -5709,28 +5358,24 @@ void case_298()
 	  }
 
 void case_302()
-#line 2411 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (65, lexer.Location, "`{0}': event property must have both add and remove accessors",
 			current_event.GetSignatureForError ());
 	  }
 
 void case_303()
-#line 2416 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (65, lexer.Location, "`{0}': event property must have both add and remove accessors",
 			current_event.GetSignatureForError ());
 	  }
 
 void case_304()
-#line 2421 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		report.Error (1055, GetLocation (yyVals[0+yyTop]), "An add or remove accessor expected");
 		yyVal = null;
 	  }
 
 void case_305()
-#line 2429 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyVals[-1+yyTop] != ModifierNone) {
 			report.Error (1609, GetLocation (yyVals[-1+yyTop]), "Modifiers cannot be placed on event accessor declarations");
@@ -5744,7 +5389,6 @@ void case_305()
 	  }
 
 void case_306()
-#line 2441 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.EventParsing = true;
 	  
@@ -5759,7 +5403,6 @@ void case_306()
 	  }
 
 void case_307()
-#line 2457 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyVals[-1+yyTop] != ModifierNone) {
 			report.Error (1609, GetLocation (yyVals[-1+yyTop]), "Modifiers cannot be placed on event accessor declarations");
@@ -5773,7 +5416,6 @@ void case_307()
 	  }
 
 void case_308()
-#line 2469 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.EventParsing = true;
 	  
@@ -5788,14 +5430,12 @@ void case_308()
 	  }
 
 void case_309()
-#line 2485 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (73, lexer.Location, "An add or remove accessor must have a body");
 		yyVal = null;
 	  }
 
 void case_311()
-#line 2494 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_type.UnattachedAttributes = (Attributes) yyVals[-1+yyTop];
 		report.Error (1519, GetLocation (yyVals[-1+yyTop]), "An attribute is missing member declaration");
@@ -5803,14 +5443,12 @@ void case_311()
 	  }
 
 void case_312()
-#line 2506 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			enumTypeComment = Lexer.consume_doc_comment ();
 	  }
 
 void case_313()
-#line 2511 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			Lexer.doc_state = XmlCommentState.Allowed;
@@ -5824,7 +5462,6 @@ void case_313()
 	  }
 
 void case_314()
-#line 2523 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	/* here will be evaluated after CLOSE_BLACE is consumed.*/
 		if (doc_support)
@@ -5832,7 +5469,6 @@ void case_314()
 	  }
 
 void case_315()
-#line 2529 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support)
 			current_container.DocComment = enumTypeComment;
@@ -5847,7 +5483,6 @@ void case_315()
 	  }
 
 void case_317()
-#line 2546 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	var te = yyVals[0+yyTop] as TypeExpression;
 		if (te == null || !EnumSpec.IsValidUnderlyingType (te.Type)) {
@@ -5857,21 +5492,18 @@ void case_317()
 	 }
 
 void case_318()
-#line 2554 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	Error_TypeExpected (GetLocation (yyVals[-1+yyTop]));
 		yyVal = null;
 	 }
 
 void case_323()
-#line 2572 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	lbag.AddLocation (yyVals[-2+yyTop], GetLocation (yyVals[-1+yyTop]));
 	  	yyVal = yyVals[0+yyTop];
 	  }
 
 void case_324()
-#line 2580 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 	  	var em = new EnumMember ((Enum) current_type, new MemberName (lt.Value, lt.Location), (Attributes) yyVals[-1+yyTop]);
@@ -5886,7 +5518,6 @@ void case_324()
 	  }
 
 void case_325()
-#line 2593 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	++lexer.parsing_block;
 		if (doc_support) {
@@ -5896,7 +5527,6 @@ void case_325()
 	  }
 
 void case_326()
-#line 2601 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		--lexer.parsing_block;
 		
@@ -5912,7 +5542,6 @@ void case_326()
 	  }
 
 void case_327()
-#line 2615 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  
@@ -5929,7 +5558,6 @@ void case_327()
 	  }
 
 void case_330()
-#line 2642 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 
@@ -5946,7 +5574,6 @@ void case_330()
 	  }
 
 void case_332()
-#line 2661 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (doc_support) {
 			current_delegate.DocComment = Lexer.consume_doc_comment ();
@@ -5963,7 +5590,6 @@ void case_332()
 	  }
 
 void case_334()
-#line 2680 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[0+yyTop]), "nullable types");
@@ -5972,7 +5598,6 @@ void case_334()
 	  }
 
 void case_336()
-#line 2691 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt1 = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		var lt2 = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
@@ -5982,7 +5607,6 @@ void case_336()
 	  }
 
 void case_338()
-#line 2703 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new MemberAccess ((Expression) yyVals[-3+yyTop], lt.Value, (TypeArguments) yyVals[0+yyTop], lt.Location);
@@ -5990,14 +5614,12 @@ void case_338()
 	  }
 
 void case_339()
-#line 2712 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new SimpleName (lt.Value, (TypeArguments)yyVals[0+yyTop], lt.Location);
 	  }
 
 void case_341()
-#line 2724 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-2+yyTop]), "generics");	  
@@ -6006,14 +5628,12 @@ void case_341()
 	  }
 
 void case_342()
-#line 2731 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_TypeExpected (lexer.Location);
 		yyVal = new TypeArguments ();
 	  }
 
 void case_343()
-#line 2739 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		TypeArguments type_args = new TypeArguments ();
 		type_args.Add ((FullNamedExpression) yyVals[0+yyTop]);
@@ -6021,7 +5641,6 @@ void case_343()
 	  }
 
 void case_344()
-#line 2745 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		TypeArguments type_args = (TypeArguments) yyVals[-2+yyTop];
 		type_args.Add ((FullNamedExpression) yyVals[0+yyTop]);
@@ -6029,7 +5648,6 @@ void case_344()
 	  }
 
 void case_346()
-#line 2761 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_generic_declaration = false;
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
@@ -6037,7 +5655,6 @@ void case_346()
 	  }
 
 void case_347()
-#line 2770 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	MemberName mn = (MemberName)yyVals[0+yyTop];
 	  	if (mn.TypeParameters != null)
@@ -6046,7 +5663,6 @@ void case_347()
 	  }
 
 void case_349()
-#line 2781 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_generic_declaration = false;	  
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
@@ -6054,21 +5670,18 @@ void case_349()
 	  }
 
 void case_350()
-#line 2790 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_generic_declaration = false;	  
 		yyVal = new MemberName (TypeDefinition.DefaultIndexerName, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_351()
-#line 2795 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.parsing_generic_declaration = false;
 		yyVal = new MemberName (TypeDefinition.DefaultIndexerName, null, (ATypeNameExpression) yyVals[-1+yyTop], GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_352()
-#line 2803 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		yyVal = new SimpleName (lt.Value, (TypeArguments) yyVals[-1+yyTop], lt.Location);
@@ -6076,7 +5689,6 @@ void case_352()
 	  }
 
 void case_353()
-#line 2809 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt1 = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		var lt2 = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
@@ -6086,7 +5698,6 @@ void case_353()
 	  }
 
 void case_354()
-#line 2817 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		yyVal = new MemberAccess ((ATypeNameExpression) yyVals[-3+yyTop], lt.Value, (TypeArguments) yyVals[-1+yyTop], lt.Location);
@@ -6094,7 +5705,6 @@ void case_354()
 	  }
 
 void case_356()
-#line 2827 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-2+yyTop]), "generics");
@@ -6104,7 +5714,6 @@ void case_356()
 	  }
 
 void case_357()
-#line 2838 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var tparams = new TypeParameters ();
 		tparams.Add ((TypeParameter)yyVals[0+yyTop]);
@@ -6112,7 +5721,6 @@ void case_357()
 	  }
 
 void case_358()
-#line 2844 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var tparams = (TypeParameters) yyVals[-2+yyTop];
 		tparams.Add ((TypeParameter)yyVals[0+yyTop]);
@@ -6121,14 +5729,12 @@ void case_358()
 	  }
 
 void case_359()
-#line 2854 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken)yyVals[0+yyTop];
 		yyVal = new TypeParameter (new MemberName (lt.Value, lt.Location), (Attributes)yyVals[-2+yyTop], (Variance) yyVals[-1+yyTop]);
   	  }
 
 void case_360()
-#line 2859 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
   	  	if (GetTokenName (yyToken) == "type")
 			report.Error (81, GetLocation (yyVals[0+yyTop]), "Type parameter declaration must be an identifier not a type");
@@ -6139,28 +5745,24 @@ void case_360()
   	  }
 
 void case_365()
-#line 2893 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Expression.Error_VoidInvalidInTheContext (GetLocation (yyVals[0+yyTop]), report);
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_367()
-#line 2902 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Expression.Error_VoidInvalidInTheContext (GetLocation (yyVals[0+yyTop]), report);
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_369()
-#line 2911 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	report.Error (1536, GetLocation (yyVals[0+yyTop]), "Invalid parameter type `void'");
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_372()
-#line 2927 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {
 			yyVal = new ComposedCast ((ATypeNameExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
@@ -6174,14 +5776,12 @@ void case_372()
 	  }
 
 void case_374()
-#line 2943 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null)
 			yyVal = new ComposedCast ((FullNamedExpression) yyVals[-1+yyTop], (ComposedTypeSpecifier) yyVals[0+yyTop]);
 	  }
 
 void case_377()
-#line 2959 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var types = new List<FullNamedExpression> (2);
 		types.Add ((FullNamedExpression) yyVals[0+yyTop]);
@@ -6189,7 +5789,6 @@ void case_377()
 	  }
 
 void case_378()
-#line 2965 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var types = (List<FullNamedExpression>) yyVals[-2+yyTop];
 		types.Add ((FullNamedExpression) yyVals[0+yyTop]);
@@ -6197,7 +5796,6 @@ void case_378()
 	  }
 
 void case_379()
-#line 2974 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is ComposedCast) {
 			report.Error (1521, GetLocation (yyVals[0+yyTop]), "Invalid base type `{0}'", ((ComposedCast)yyVals[0+yyTop]).GetSignatureForError ());
@@ -6206,28 +5804,24 @@ void case_379()
 	  }
 
 void case_416()
-#line 3038 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new SimpleName (lt.Value, (TypeArguments)yyVals[0+yyTop], lt.Location);	  
 	  }
 
 void case_417()
-#line 3042 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 	       yyVal = new CompletionSimpleName (MemberName.MakeName (lt.Value, null), lt.Location);
 	  }
 
 void case_428()
-#line 3083 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new ParenthesizedExpression ((Expression) yyVals[-1+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_430()
-#line 3095 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new MemberAccess ((Expression) yyVals[-3+yyTop], lt.Value, (TypeArguments) yyVals[0+yyTop], lt.Location);
@@ -6235,7 +5829,6 @@ void case_430()
 	  }
 
 void case_431()
-#line 3101 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new MemberAccess ((Expression) yyVals[-3+yyTop], lt.Value, (TypeArguments) yyVals[0+yyTop], lt.Location);
@@ -6243,7 +5836,6 @@ void case_431()
 	  }
 
 void case_432()
-#line 3107 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new MemberAccess (new BaseThis (GetLocation (yyVals[-3+yyTop])), lt.Value, (TypeArguments) yyVals[0+yyTop], lt.Location);
@@ -6251,7 +5843,6 @@ void case_432()
 	  }
 
 void case_433()
-#line 3113 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt1 = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		var lt2 = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
@@ -6261,28 +5852,24 @@ void case_433()
 	  }
 
 void case_435()
-#line 3123 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new CompletionMemberAccess ((Expression) yyVals[-3+yyTop], lt.Value, lt.Location);
 	  }
 
 void case_437()
-#line 3131 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new CompletionMemberAccess ((Expression) yyVals[-3+yyTop], lt.Value, lt.Location);
  	  }
 
 void case_438()
-#line 3139 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Invocation ((Expression) yyVals[-3+yyTop], (Arguments) yyVals[-1+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_439()
-#line 3144 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -6291,7 +5878,6 @@ void case_439()
 	  }
 
 void case_442()
-#line 3160 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyVals[-1+yyTop] == null) {
 	  		yyVal = CollectionOrObjectInitializers.Empty;
@@ -6303,14 +5889,12 @@ void case_442()
 	  }
 
 void case_443()
-#line 3170 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	yyVal = new CollectionOrObjectInitializers ((List<Expression>) yyVals[-2+yyTop], GetLocation (yyVals[-3+yyTop]));
 	  	lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_446()
-#line 3186 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var a = new List<Expression> ();
 	  	a.Add ((Expression) yyVals[0+yyTop]);
@@ -6318,7 +5902,6 @@ void case_446()
 	  }
 
 void case_447()
-#line 3192 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var a = (List<Expression>)yyVals[-2+yyTop];
 	  	a.Add ((Expression) yyVals[0+yyTop]);
@@ -6326,14 +5909,12 @@ void case_447()
 	  }
 
 void case_448()
-#line 3197 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (yyToken);
 		yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_449()
-#line 3205 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 	  	yyVal = new ElementInitializer (lt.Value, (Expression)yyVals[0+yyTop], lt.Location);
@@ -6341,7 +5922,6 @@ void case_449()
 	  }
 
 void case_451()
-#line 3214 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		CompletionSimpleName csn = yyVals[-1+yyTop] as CompletionSimpleName;
 		if (csn == null)
@@ -6351,7 +5931,6 @@ void case_451()
 	  }
 
 void case_452()
-#line 3222 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-1+yyTop] == null)
 			yyVal = null;
@@ -6360,14 +5939,12 @@ void case_452()
 	  }
 
 void case_453()
-#line 3229 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	report.Error (1920, GetLocation (yyVals[-1+yyTop]), "An element initializer cannot be empty");
 		yyVal = null;
 	  }
 
 void case_458()
-#line 3247 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		Arguments list = new Arguments (4);
 		list.Add ((Argument) yyVals[0+yyTop]);
@@ -6375,7 +5952,6 @@ void case_458()
 	  }
 
 void case_459()
-#line 3253 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments list = (Arguments) yyVals[-2+yyTop];
 		if (list [list.Count - 1] is NamedArgument)
@@ -6386,7 +5962,6 @@ void case_459()
 	  }
 
 void case_460()
-#line 3262 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments list = (Arguments) yyVals[-2+yyTop];
 		NamedArgument a = (NamedArgument) yyVals[0+yyTop];
@@ -6402,7 +5977,6 @@ void case_460()
 	  }
 
 void case_461()
-#line 3276 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (lexer.putback_char == -1)
 	  		lexer.putback (')'); /* TODO: Wrong but what can I do*/
@@ -6411,63 +5985,54 @@ void case_461()
 	  }
 
 void case_462()
-#line 3283 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	report.Error (839, GetLocation (yyVals[-1+yyTop]), "An argument is missing");
 	  	yyVal = null;
 	  }
 
 void case_467()
-#line 3304 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		yyVal = new Argument ((Expression) yyVals[0+yyTop], Argument.AType.Ref);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_468()
-#line 3309 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		yyVal = new Argument ((Expression) yyVals[0+yyTop], Argument.AType.Out);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_469()
-#line 3314 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Argument (new Arglist ((Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop])));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_470()
-#line 3319 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Argument (new Arglist (GetLocation (yyVals[-2+yyTop])));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_472()
-#line 3331 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new ElementAccess ((Expression) yyVals[-3+yyTop], (Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_473()
-#line 3336 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new ElementAccess ((Expression) yyVals[-3+yyTop], (Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_474()
-#line 3341 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new ElementAccess ((Expression) yyVals[-2+yyTop], null, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_475()
-#line 3349 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var list = new List<Expression> (4);
 		list.Add ((Expression) yyVals[0+yyTop]);
@@ -6475,7 +6040,6 @@ void case_475()
 	  }
 
 void case_476()
-#line 3355 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var list = (List<Expression>) yyVals[-2+yyTop];
 		list.Add ((Expression) yyVals[0+yyTop]);
@@ -6483,14 +6047,12 @@ void case_476()
 	  }
 
 void case_477()
-#line 3360 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (yyToken);
 		yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_478()
-#line 3368 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments args = new Arguments (4);
 		args.Add ((Argument) yyVals[0+yyTop]);
@@ -6498,7 +6060,6 @@ void case_478()
 	  }
 
 void case_479()
-#line 3374 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Arguments args = (Arguments) yyVals[-2+yyTop];
 		if (args [args.Count - 1] is NamedArgument && !(yyVals[0+yyTop] is NamedArgument))
@@ -6509,21 +6070,18 @@ void case_479()
 	  }
 
 void case_483()
-#line 3401 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	yyVal = new ElementAccess (new BaseThis (GetLocation (yyVals[-3+yyTop])), (Arguments) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_484()
-#line 3406 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Error_SyntaxError (yyToken);
 		yyVal = new ElementAccess (null, null, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_487()
-#line 3428 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] != null) {
 			if (lang_version <= LanguageVersion.ISO_2)
@@ -6538,7 +6096,6 @@ void case_487()
 	  }
 
 void case_488()
-#line 3441 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version <= LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-2+yyTop]), "collection initializers");
@@ -6547,7 +6104,6 @@ void case_488()
 	  }
 
 void case_489()
-#line 3453 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new ArrayCreation ((FullNamedExpression) yyVals[-5+yyTop], (List<Expression>) yyVals[-3+yyTop],
 				new ComposedTypeSpecifier (((List<Expression>) yyVals[-3+yyTop]).Count, GetLocation (yyVals[-4+yyTop])) {
@@ -6557,7 +6113,6 @@ void case_489()
 	  }
 
 void case_490()
-#line 3461 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyVals[0+yyTop] == null)
 	  		report.Error (1586, GetLocation (yyVals[-3+yyTop]), "Array creation must have array size or array initializer");
@@ -6566,7 +6121,6 @@ void case_490()
 	  }
 
 void case_491()
-#line 3468 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version <= LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-2+yyTop]), "implicitly typed arrays");
@@ -6575,14 +6129,12 @@ void case_491()
 	  }
 
 void case_492()
-#line 3475 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (178, GetLocation (yyVals[-1+yyTop]), "Invalid rank specifier, expecting `,' or `]'");
 		yyVal = new ArrayCreation ((FullNamedExpression) yyVals[-5+yyTop], null, GetLocation (yyVals[-6+yyTop]));
 	  }
 
 void case_493()
-#line 3480 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		/* It can be any of new expression, create the most common one*/
@@ -6590,14 +6142,12 @@ void case_493()
 	  }
 
 void case_495()
-#line 3492 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_type;
 		yyVal = yyVals[0+yyTop];
 	  }
 
 void case_496()
-#line 3500 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version <= LanguageVersion.ISO_2)
 	  		FeatureIsNotAvailable (GetLocation (yyVals[-3+yyTop]), "anonymous types");
@@ -6609,7 +6159,6 @@ void case_496()
 	  }
 
 void case_501()
-#line 3523 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var a = new List<AnonymousTypeParameter> (4);
 	  	a.Add ((AnonymousTypeParameter) yyVals[0+yyTop]);
@@ -6617,7 +6166,6 @@ void case_501()
 	  }
 
 void case_502()
-#line 3529 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var a = (List<AnonymousTypeParameter>) yyVals[-2+yyTop];
 	  	a.Add ((AnonymousTypeParameter) yyVals[0+yyTop]);
@@ -6625,7 +6173,6 @@ void case_502()
 	  }
 
 void case_503()
-#line 3538 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken)yyVals[-2+yyTop];
 	  	yyVal = new AnonymousTypeParameter ((Expression)yyVals[0+yyTop], lt.Value, lt.Location);
@@ -6633,7 +6180,6 @@ void case_503()
 	  }
 
 void case_504()
-#line 3544 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken)yyVals[0+yyTop];
 	  	yyVal = new AnonymousTypeParameter (new SimpleName (lt.Value, lt.Location),
@@ -6641,14 +6187,12 @@ void case_504()
 	  }
 
 void case_505()
-#line 3550 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	MemberAccess ma = (MemberAccess) yyVals[0+yyTop];
 	  	yyVal = new AnonymousTypeParameter (ma, ma.Name, ma.Location);
 	  }
 
 void case_506()
-#line 3555 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (746, lexer.Location,
 			"Invalid anonymous type member declarator. Anonymous type members must be a member assignment, simple name or member access expression");
@@ -6656,28 +6200,24 @@ void case_506()
 	  }
 
 void case_510()
-#line 3570 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	((ComposedTypeSpecifier) yyVals[-1+yyTop]).Next = (ComposedTypeSpecifier) yyVals[0+yyTop];
 	  	yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_511()
-#line 3578 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = ComposedTypeSpecifier.CreateArrayDimension (1, GetLocation (yyVals[-1+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_512()
-#line 3583 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = ComposedTypeSpecifier.CreateArrayDimension ((int)yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_517()
-#line 3613 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var ai = new ArrayInitializer (0, GetLocation (yyVals[-1+yyTop]));
 		ai.VariableDeclaration = current_variable;
@@ -6686,7 +6226,6 @@ void case_517()
 	  }
 
 void case_518()
-#line 3620 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var ai = new ArrayInitializer ((List<Expression>) yyVals[-2+yyTop], GetLocation (yyVals[-3+yyTop]));
 		ai.VariableDeclaration = current_variable;
@@ -6699,7 +6238,6 @@ void case_518()
 	  }
 
 void case_519()
-#line 3634 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var list = new List<Expression> (4);
 		list.Add ((Expression) yyVals[0+yyTop]);
@@ -6707,7 +6245,6 @@ void case_519()
 	  }
 
 void case_520()
-#line 3640 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var list = (List<Expression>) yyVals[-2+yyTop];
 		list.Add ((Expression) yyVals[0+yyTop]);
@@ -6715,7 +6252,6 @@ void case_520()
 	  }
 
 void case_522()
-#line 3653 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	lexer.TypeOfParsing = false;
 		yyVal = new TypeOf ((FullNamedExpression) yyVals[-1+yyTop], GetLocation (yyVals[-4+yyTop]));
@@ -6723,14 +6259,12 @@ void case_522()
 	  }
 
 void case_525()
-#line 3664 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	Error_TypeExpected (lexer.Location);
 	 	yyVal = null;
 	 }
 
 void case_526()
-#line 3672 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {  
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 
@@ -6738,7 +6272,6 @@ void case_526()
 	  }
 
 void case_527()
-#line 3678 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt1 = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		var lt2 = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
@@ -6748,7 +6281,6 @@ void case_527()
 	  }
 
 void case_528()
-#line 3686 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		
@@ -6756,7 +6288,6 @@ void case_528()
 	  }
 
 void case_529()
-#line 3692 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		
@@ -6764,7 +6295,6 @@ void case_529()
 	  }
 
 void case_530()
-#line 3698 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var tne = (ATypeNameExpression) yyVals[-3+yyTop];
 		if (tne.HasTypeArguments)
@@ -6775,7 +6305,6 @@ void case_530()
 	  }
 
 void case_531()
-#line 3710 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[0+yyTop]), "generics");
@@ -6784,7 +6313,6 @@ void case_531()
 	  }
 
 void case_532()
-#line 3720 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		if (lang_version == LanguageVersion.ISO_1)
@@ -6794,42 +6322,36 @@ void case_532()
 	  }
 
 void case_533()
-#line 3731 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		yyVal = new SizeOf ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_534()
-#line 3739 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CheckedExpr ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_535()
-#line 3747 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new UnCheckedExpr ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_536()
-#line 3755 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new MemberAccess (new Indirection ((Expression) yyVals[-3+yyTop], GetLocation (yyVals[-2+yyTop])), lt.Value, (TypeArguments) yyVals[0+yyTop], lt.Location);
 	  }
 
 void case_544()
-#line 3794 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		valid_param_mod = 0;
 	  	yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_545()
-#line 3802 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-3+yyTop]), "default value expression");
@@ -6839,14 +6361,12 @@ void case_545()
 	  }
 
 void case_549()
-#line 3822 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Cast ((FullNamedExpression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_550()
-#line 3827 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (!async_block) {
 			 if (current_anonymous_method is LambdaExpression) {
@@ -6867,133 +6387,114 @@ void case_550()
 	  }
 
 void case_559()
-#line 3882 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Multiply, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_560()
-#line 3887 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Division, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_561()
-#line 3892 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Modulus, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_563()
-#line 3901 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Addition, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_564()
-#line 3906 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Subtraction, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_568()
-#line 3923 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.LeftShift, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_569()
-#line 3928 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.RightShift, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_571()
-#line 3937 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.LessThan, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_572()
-#line 3942 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.GreaterThan, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_573()
-#line 3947 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.LessThanOrEqual, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_574()
-#line 3952 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.GreaterThanOrEqual, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_576()
-#line 3961 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Equality, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_577()
-#line 3966 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.Inequality, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_579()
-#line 3975 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.BitwiseAnd, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_581()
-#line 3984 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.ExclusiveOr, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_583()
-#line 3993 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.BitwiseOr, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_585()
-#line 4002 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.LogicalAnd, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_587()
-#line 4011 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Binary (Binary.Operator.LogicalOr, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_589()
-#line 4020 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version < LanguageVersion.ISO_2)
 			FeatureIsNotAvailable (GetLocation (yyVals[-1+yyTop]), "null coalescing operator");
@@ -7003,98 +6504,84 @@ void case_589()
 	  }
 
 void case_591()
-#line 4032 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Conditional (new BooleanExpression ((Expression) yyVals[-4+yyTop]), (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_592()
-#line 4037 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Conditional (new BooleanExpression ((Expression) yyVals[-3+yyTop]), (Expression) yyVals[-1+yyTop], null, GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_593()
-#line 4045 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new SimpleAssign ((Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_594()
-#line 4050 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.Multiply, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_595()
-#line 4055 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.Division, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_596()
-#line 4060 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.Modulus, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_597()
-#line 4065 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.Addition, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_598()
-#line 4070 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.Subtraction, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_599()
-#line 4075 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.LeftShift, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_600()
-#line 4080 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.RightShift, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_601()
-#line 4085 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.BitwiseAnd, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_602()
-#line 4090 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.BitwiseOr, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_603()
-#line 4095 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new CompoundAssign (Binary.Operator.ExclusiveOr, (Expression) yyVals[-2+yyTop], (Expression) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_604()
-#line 4103 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars = new List<Parameter> (4);
 		pars.Add ((Parameter) yyVals[0+yyTop]);
@@ -7103,7 +6590,6 @@ void case_604()
 	  }
 
 void case_605()
-#line 4110 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var pars = (List<Parameter>) yyVals[-2+yyTop];
 		Parameter p = (Parameter)yyVals[0+yyTop];
@@ -7116,7 +6602,6 @@ void case_605()
 	  }
 
 void case_606()
-#line 4124 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 
@@ -7124,7 +6609,6 @@ void case_606()
 	  }
 
 void case_607()
-#line 4130 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 
@@ -7132,21 +6616,18 @@ void case_607()
 	  }
 
 void case_608()
-#line 4136 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		yyVal = new ImplicitLambdaParameter (lt.Value, lt.Location);
 	  }
 
 void case_610()
-#line 4144 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		var pars_list = (List<Parameter>) yyVals[0+yyTop];
 		yyVal = new ParametersCompiled (pars_list.ToArray ());
 	  }
 
 void case_614()
-#line 4160 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Block b = end_block (Location.Null);
 		b.IsCompilerGenerated = true;
@@ -7155,14 +6636,12 @@ void case_614()
 	  }
 
 void case_616()
-#line 4171 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);	
 		yyVal = EmptyExpression.Null;
 	  }
 
 void case_617()
-#line 4179 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];	
 		Parameter p = new ImplicitLambdaParameter (lt.Value, lt.Location);
@@ -7170,14 +6649,12 @@ void case_617()
 	  }
 
 void case_618()
-#line 4185 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_619()
-#line 4190 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		Parameter p = new ImplicitLambdaParameter (lt.Value, lt.Location);
@@ -7185,63 +6662,54 @@ void case_619()
 	  }
 
 void case_620()
-#line 4196 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-4+yyTop]), GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_622()
-#line 4205 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	valid_param_mod = 0;
 		start_anonymous (true, (ParametersCompiled) yyVals[-2+yyTop], false, GetLocation (yyVals[-4+yyTop]));
 	  }
 
 void case_623()
-#line 4210 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-6+yyTop]), GetLocation (yyVals[-3+yyTop]), GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_625()
-#line 4219 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	valid_param_mod = 0;
 		start_anonymous (true, (ParametersCompiled) yyVals[-2+yyTop], true, GetLocation (yyVals[-5+yyTop]));
 	  }
 
 void case_626()
-#line 4224 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = end_anonymous ((ParametersBlock) yyVals[0+yyTop]);
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-7+yyTop]), GetLocation (yyVals[-6+yyTop]), GetLocation (yyVals[-3+yyTop]), GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_633()
-#line 4247 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new RefValueExpr ((Expression) yyVals[-3+yyTop], (FullNamedExpression) yyVals[-1+yyTop], GetLocation (yyVals[-5+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-4+yyTop]), GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_634()
-#line 4252 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new RefTypeExpr ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_635()
-#line 4257 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new MakeRefExpr ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));	  
 	  }
 
 void case_639()
-#line 4286 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Class c = new Class (current_container, (MemberName) yyVals[0+yyTop], (Modifiers) yyVals[-4+yyTop], (Attributes) yyVals[-5+yyTop]);
 		if (((c.ModFlags & Modifiers.STATIC) != 0) && lang_version == LanguageVersion.ISO_1) {
@@ -7252,7 +6720,6 @@ void case_639()
 	  }
 
 void case_640()
-#line 4296 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.ConstraintsParsing = false;
 
@@ -7269,7 +6736,6 @@ void case_640()
 	  }
 
 void case_641()
-#line 4311 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_declaration;
 		if (doc_support)
@@ -7277,14 +6743,12 @@ void case_641()
 	  }
 
 void case_642()
-#line 4317 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lbag.AppendToMember (current_container, GetLocation (yyVals[-4+yyTop]), GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 		yyVal = pop_current_class ();
 	  }
 
 void case_645()
-#line 4332 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	    mod_locations = null;
 		yyVal = ModifierNone;
@@ -7292,7 +6756,6 @@ void case_645()
 	  }
 
 void case_648()
-#line 4346 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		var m1 = (Modifiers) yyVals[-1+yyTop];
 		var m2 = (Modifiers) yyVals[0+yyTop];
@@ -7310,7 +6773,6 @@ void case_648()
 	  }
 
 void case_649()
-#line 4365 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.NEW;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
@@ -7320,91 +6782,78 @@ void case_649()
 	  }
 
 void case_650()
-#line 4373 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.PUBLIC;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_651()
-#line 4378 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.PROTECTED;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_652()
-#line 4383 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.INTERNAL;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_653()
-#line 4388 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.PRIVATE;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_654()
-#line 4393 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.ABSTRACT;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_655()
-#line 4398 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.SEALED;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_656()
-#line 4403 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.STATIC;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_657()
-#line 4408 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.READONLY;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_658()
-#line 4413 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.VIRTUAL;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_659()
-#line 4418 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.OVERRIDE;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_660()
-#line 4423 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.EXTERN;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_661()
-#line 4428 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.VOLATILE;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_662()
-#line 4433 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.UNSAFE;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
@@ -7413,14 +6862,12 @@ void case_662()
 	  }
 
 void case_663()
-#line 4440 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = Modifiers.ASYNC;
 		StoreModifierLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_666()
-#line 4453 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -7428,7 +6875,6 @@ void case_666()
 	  }
 
 void case_669()
-#line 4470 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var constraints = new List<Constraints> (1);
 		constraints.Add ((Constraints) yyVals[0+yyTop]);
@@ -7436,7 +6882,6 @@ void case_669()
 	  }
 
 void case_670()
-#line 4476 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var constraints = (List<Constraints>) yyVals[-1+yyTop];
 		Constraints new_constraint = (Constraints)yyVals[0+yyTop];
@@ -7454,7 +6899,6 @@ void case_670()
 	  }
 
 void case_671()
-#line 4495 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		yyVal = new Constraints (new SimpleMemberName (lt.Value, lt.Location), (List<FullNamedExpression>) yyVals[0+yyTop], GetLocation (yyVals[-3+yyTop]));
@@ -7462,7 +6906,6 @@ void case_671()
 	  }
 
 void case_672()
-#line 4501 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  
@@ -7471,7 +6914,6 @@ void case_672()
 	  }
 
 void case_673()
-#line 4511 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var constraints = new List<FullNamedExpression> (1);
 		constraints.Add ((FullNamedExpression) yyVals[0+yyTop]);
@@ -7479,7 +6921,6 @@ void case_673()
 	  }
 
 void case_674()
-#line 4517 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var constraints = (List<FullNamedExpression>) yyVals[-2+yyTop];
 		var prev = constraints [constraints.Count - 1] as SpecialContraintExpr;
@@ -7504,7 +6945,6 @@ void case_674()
 	  }
 
 void case_675()
-#line 4543 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is ComposedCast)
 			report.Error (706, GetLocation (yyVals[0+yyTop]), "Invalid constraint type `{0}'", ((ComposedCast)yyVals[0+yyTop]).GetSignatureForError ());
@@ -7513,14 +6953,12 @@ void case_675()
 	  }
 
 void case_676()
-#line 4550 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new SpecialContraintExpr (SpecialConstraint.Constructor, GetLocation (yyVals[-2+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_680()
-#line 4570 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (lang_version <= LanguageVersion.V_3)
 			FeatureIsNotAvailable (lexer.Location, "generic type variance");
@@ -7529,77 +6967,66 @@ void case_680()
 	  }
 
 void case_683()
-#line 4604 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		++lexer.parsing_block;
 		start_block (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_685()
-#line 4616 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	--lexer.parsing_block;
 		yyVal = end_block (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_686()
-#line 4621 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	--lexer.parsing_block;
 		yyVal = end_block (lexer.Location);
 	  }
 
 void case_687()
-#line 4630 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		++lexer.parsing_block;
 		current_block.StartLocation = GetLocation (yyVals[0+yyTop]);
 	  }
 
 void case_688()
-#line 4635 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		yyVal = end_block (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_696()
-#line 4662 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = null;
 	  }
 
 void case_729()
-#line 4726 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		  report.Error (1023, GetLocation (yyVals[0+yyTop]), "An embedded statement may not be a declaration or labeled statement");
 		  yyVal = null;
 	  }
 
 void case_730()
-#line 4731 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		  report.Error (1023, GetLocation (yyVals[0+yyTop]), "An embedded statement may not be a declaration or labeled statement");
 		  yyVal = null;
 	  }
 
 void case_731()
-#line 4736 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new EmptyStatement (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_732()
-#line 4744 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* Uses lexer.Location because semicolon location is not kept in quick mode*/
 		yyVal = new EmptyStatement (lexer.Location);
 	  }
 
 void case_733()
-#line 4752 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		LabeledStatement labeled = new LabeledStatement (lt.Value, current_block, lt.Location);
@@ -7609,7 +7036,6 @@ void case_733()
 	  }
 
 void case_736()
-#line 4765 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-1+yyTop] is VarExpr)
 			yyVals[-1+yyTop] = new SimpleName ("var", ((VarExpr) yyVals[-1+yyTop]).Location);
@@ -7618,7 +7044,6 @@ void case_736()
 	  }
 
 void case_737()
-#line 4781 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		/* Ok, the above "primary_expression" is there to get rid of*/
 		/* both reduce/reduce and shift/reduces in the grammar, it should*/
@@ -7650,7 +7075,6 @@ void case_737()
 	  }
 
 void case_738()
-#line 4811 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		ATypeNameExpression expr = yyVals[-1+yyTop] as ATypeNameExpression;
 
@@ -7663,7 +7087,6 @@ void case_738()
 	  }
 
 void case_739()
-#line 4822 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] == null)
 			yyVal = yyVals[-1+yyTop];
@@ -7672,21 +7095,18 @@ void case_739()
 	  }
 
 void case_742()
-#line 4837 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Expression.Error_VoidInvalidInTheContext (GetLocation (yyVals[0+yyTop]), report);
 		yyVal = new TypeExpression (compiler.BuiltinTypes.Void, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_744()
-#line 4846 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	((ComposedTypeSpecifier) yyVals[-1+yyTop]).Next = (ComposedTypeSpecifier) yyVals[0+yyTop];
 	  	yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_747()
-#line 4862 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (async_block) {
 			report.Error (4003, GetLocation (yyVals[0+yyTop]), "`await' cannot be used as an identifier within an async method or lambda expression");
@@ -7695,7 +7115,6 @@ void case_747()
 	  }
 
 void case_748()
-#line 4872 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		var li = new LocalVariable (current_block, lt.Value, lt.Location);
@@ -7704,7 +7123,6 @@ void case_748()
 	  }
 
 void case_749()
-#line 4879 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = current_variable;
 		current_variable = null;
@@ -7712,7 +7130,6 @@ void case_749()
 	  }
 
 void case_750()
-#line 4885 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		var li = new LocalVariable (current_block, lt.Value, LocalVariable.Flags.Constant, lt.Location);
@@ -7721,7 +7138,6 @@ void case_750()
 	  }
 
 void case_751()
-#line 4892 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = current_variable;
 		current_variable = null;
@@ -7729,14 +7145,12 @@ void case_751()
 	  }
 
 void case_753()
-#line 4902 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_variable.Initializer = (Expression) yyVals[0+yyTop];
 		/* TODO: lbag*/
 	  }
 
 void case_754()
-#line 4907 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyToken == Token.OPEN_BRACKET_EXPR) {
 			report.Error (650, lexer.Location,
@@ -7747,7 +7161,6 @@ void case_754()
 	  }
 
 void case_758()
-#line 4925 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		foreach (var d in current_variable.Declarators) {
 			if (d.Initializer == null)
@@ -7756,7 +7169,6 @@ void case_758()
 	  }
 
 void case_761()
-#line 4940 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];	  
 		var li = new LocalVariable (current_variable.Variable, lt.Value, lt.Location);
@@ -7767,7 +7179,6 @@ void case_761()
 	  }
 
 void case_762()
-#line 4949 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];	  
 		var li = new LocalVariable (current_variable.Variable, lt.Value, lt.Location);
@@ -7778,7 +7189,6 @@ void case_762()
 	  }
 
 void case_769()
-#line 4982 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];	  
 		var li = new LocalVariable (current_block, lt.Value, LocalVariable.Flags.Constant, lt.Location);
@@ -7789,28 +7199,24 @@ void case_769()
 	  }
 
 void case_771()
-#line 4995 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new StackAlloc ((Expression) yyVals[-3+yyTop], (Expression) yyVals[-1+yyTop], GetLocation (yyVals[-4+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_772()
-#line 5000 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1575, GetLocation (yyVals[-1+yyTop]), "A stackalloc expression requires [] after type");
 		yyVal = new StackAlloc ((Expression) yyVals[0+yyTop], null, GetLocation (yyVals[-1+yyTop]));		
 	  }
 
 void case_773()
-#line 5008 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = yyVals[-1+yyTop];
 		lbag.AddStatement (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_775()
-#line 5014 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = yyVals[-1+yyTop];
 		report.Error (1002, GetLocation (yyVals[0+yyTop]), "; expected");
@@ -7818,7 +7224,6 @@ void case_775()
 	  }
 
 void case_778()
-#line 5032 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		ExpressionStatement s = yyVals[0+yyTop] as ExpressionStatement;
 		if (s == null) {
@@ -7830,7 +7235,6 @@ void case_778()
 	  }
 
 void case_779()
-#line 5045 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Expression expr = (Expression) yyVals[0+yyTop];
 		ExpressionStatement s;
@@ -7840,14 +7244,12 @@ void case_779()
 	  }
 
 void case_780()
-#line 5053 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new EmptyStatement (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_783()
-#line 5067 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		if (yyVals[0+yyTop] is EmptyStatement)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -7857,7 +7259,6 @@ void case_783()
 	  }
 
 void case_784()
-#line 5076 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new If ((BooleanExpression) yyVals[-4+yyTop], (Statement) yyVals[-2+yyTop], (Statement) yyVals[0+yyTop], GetLocation (yyVals[-6+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-5+yyTop]), GetLocation (yyVals[-3+yyTop]), GetLocation (yyVals[-1+yyTop]));
@@ -7869,7 +7270,6 @@ void case_784()
 	  }
 
 void case_785()
-#line 5086 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		
@@ -7878,7 +7278,6 @@ void case_785()
 	  }
 
 void case_787()
-#line 5100 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Switch ((Expression) yyVals[-5+yyTop], (ExplicitBlock) current_block.Explicit, (List<SwitchSection>) yyVals[-1+yyTop], GetLocation (yyVals[-7+yyTop]));	
 		end_block (GetLocation (yyVals[0+yyTop]));
@@ -7886,7 +7285,6 @@ void case_787()
 	  }
 
 void case_788()
-#line 5106 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  
@@ -7895,14 +7293,12 @@ void case_788()
 	  }
 
 void case_789()
-#line 5116 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Warning (1522, 1, current_block.StartLocation, "Empty switch block"); 
 		yyVal = new List<SwitchSection> ();
 	  }
 
 void case_791()
-#line 5125 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var sections = new List<SwitchSection> (4);
 
@@ -7911,7 +7307,6 @@ void case_791()
 	  }
 
 void case_792()
-#line 5132 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var sections = (List<SwitchSection>) yyVals[-1+yyTop];
 
@@ -7920,14 +7315,12 @@ void case_792()
 	  }
 
 void case_793()
-#line 5139 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new List<SwitchSection> ();
 	  }
 
 void case_796()
-#line 5158 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var labels = new List<SwitchLabel> (2);
 
@@ -7936,7 +7329,6 @@ void case_796()
 	  }
 
 void case_797()
-#line 5165 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var labels = (List<SwitchLabel>) (yyVals[-1+yyTop]);
 		labels.Add ((SwitchLabel) yyVals[0+yyTop]);
@@ -7945,21 +7337,18 @@ void case_797()
 	  }
 
 void case_798()
-#line 5175 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	 	yyVal = new SwitchLabel ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 	 	lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	 }
 
 void case_799()
-#line 5180 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new SwitchLabel ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_805()
-#line 5199 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -7969,7 +7358,6 @@ void case_805()
 	  }
 
 void case_806()
-#line 5207 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		
@@ -7978,21 +7366,18 @@ void case_806()
 	  }
 
 void case_807()
-#line 5217 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Do ((Statement) yyVals[-5+yyTop], (BooleanExpression) yyVals[-2+yyTop], GetLocation (yyVals[-6+yyTop]), GetLocation (yyVals[-4+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-4+yyTop]), GetLocation (yyVals[-3+yyTop]), GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_808()
-#line 5222 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Do ((Statement) yyVals[-1+yyTop], null, GetLocation (yyVals[-2+yyTop]), Location.Null);
 	  }
 
 void case_809()
-#line 5227 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	  
@@ -8001,7 +7386,6 @@ void case_809()
 	  }
 
 void case_810()
-#line 5237 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		start_block (GetLocation (yyVals[0+yyTop]));
 		current_block.IsCompilerGenerated = true;
@@ -8011,7 +7395,6 @@ void case_810()
 	  }
 
 void case_812()
-#line 5253 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		((For) yyVals[-2+yyTop]).Initializer = (Statement) yyVals[-1+yyTop];
 
@@ -8020,7 +7403,6 @@ void case_812()
 	  }
 
 void case_813()
-#line 5261 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var locations = (Tuple<Location,Location>) yyVals[-1+yyTop];
 		oob_stack.Pop ();
@@ -8035,21 +7417,18 @@ void case_813()
 	  }
 
 void case_814()
-#line 5274 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = end_block (current_block.StartLocation);
 	  }
 
 void case_815()
-#line 5282 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		For f = (For) oob_stack.Peek ();
 		f.Condition = (BooleanExpression) yyVals[-1+yyTop];
 	  }
 
 void case_817()
-#line 5292 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1525, GetLocation (yyVals[0+yyTop]), "Unexpected symbol `}'");
 		For f = (For) oob_stack.Peek ();
@@ -8058,7 +7437,6 @@ void case_817()
 	  }
 
 void case_818()
-#line 5301 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	For f = (For) oob_stack.Peek ();
 		f.Iterator = (Statement) yyVals[-1+yyTop];
@@ -8066,7 +7444,6 @@ void case_818()
 	  }
 
 void case_819()
-#line 5306 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (1525, GetLocation (yyVals[0+yyTop]), "Unexpected symbol expected ')'");
 		For f = (For) oob_stack.Peek ();
@@ -8075,7 +7452,6 @@ void case_819()
 	  }
 
 void case_824()
-#line 5326 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[0+yyTop];
 		var li = new LocalVariable (current_block, lt.Value, lt.Location);
@@ -8084,14 +7460,12 @@ void case_824()
 	  }
 
 void case_825()
-#line 5333 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = current_variable;
 		current_variable = null;
 	  }
 
 void case_833()
-#line 5357 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	var sl = yyVals[-2+yyTop] as StatementList;
 	  	if (sl == null) {
@@ -8106,7 +7480,6 @@ void case_833()
 	  }
 
 void case_834()
-#line 5373 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (230, GetLocation (yyVals[-3+yyTop]), "Type and identifier are both required in a foreach statement");
 
@@ -8121,7 +7494,6 @@ void case_834()
 	  }
 
 void case_835()
-#line 5386 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 	
@@ -8140,7 +7512,6 @@ void case_835()
 	  }
 
 void case_836()
-#line 5403 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		start_block (GetLocation (yyVals[-5+yyTop]));
 		current_block.IsCompilerGenerated = true;
@@ -8152,7 +7523,6 @@ void case_836()
 	  }
 
 void case_837()
-#line 5413 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -8165,28 +7535,24 @@ void case_837()
 	  }
 
 void case_844()
-#line 5436 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Break (GetLocation (yyVals[-1+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_845()
-#line 5444 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Continue (GetLocation (yyVals[-1+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_846()
-#line 5449 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Continue (GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_847()
-#line 5457 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-1+yyTop];
 		yyVal = new Goto (lt.Value, GetLocation (yyVals[-2+yyTop]));
@@ -8194,56 +7560,48 @@ void case_847()
 	  }
 
 void case_848()
-#line 5463 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new GotoCase ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-2+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_849()
-#line 5468 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new GotoDefault (GetLocation (yyVals[-2+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-1+yyTop]), GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_850()
-#line 5476 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Return ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_851()
-#line 5481 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Return ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 	  }
 
 void case_852()
-#line 5486 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Return (null, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_853()
-#line 5494 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Throw ((Expression) yyVals[-1+yyTop], GetLocation (yyVals[-2+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_854()
-#line 5499 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = new Throw (null, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_855()
-#line 5507 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		string s = lt.Value;
@@ -8261,7 +7619,6 @@ void case_855()
 	  }
 
 void case_856()
-#line 5523 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -8281,7 +7638,6 @@ void case_856()
 	  }
 
 void case_857()
-#line 5541 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
 		string s = lt.Value;
@@ -8297,28 +7653,24 @@ void case_857()
 	  }
 
 void case_861()
-#line 5567 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new TryFinally ((Statement) yyVals[-2+yyTop], (Block) yyVals[0+yyTop], GetLocation (yyVals[-3+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_862()
-#line 5572 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new TryFinally (new TryCatch ((Block) yyVals[-3+yyTop], (List<Catch>) yyVals[-2+yyTop], Location.Null, true), (Block) yyVals[0+yyTop], GetLocation (yyVals[-4+yyTop]));
 		lbag.AddStatement (yyVal, GetLocation (yyVals[-1+yyTop]));
 	  }
 
 void case_863()
-#line 5577 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (1524, yyToken);
 		yyVal = new TryCatch ((Block) yyVals[-1+yyTop], null, GetLocation (yyVals[-2+yyTop]), false);
 	  }
 
 void case_864()
-#line 5585 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var l = new List<Catch> (2);
 
@@ -8327,7 +7679,6 @@ void case_864()
 	  }
 
 void case_865()
-#line 5592 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var l = (List<Catch>) yyVals[-1+yyTop];
 		
@@ -8341,7 +7692,6 @@ void case_865()
 	  }
 
 void case_869()
-#line 5616 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		start_block (GetLocation (yyVals[-3+yyTop]));
 		var c = new Catch (current_block, GetLocation (yyVals[-4+yyTop]));
@@ -8358,7 +7708,6 @@ void case_869()
 	  }
 
 void case_871()
-#line 5635 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (yyToken == Token.CLOSE_PARENS) {
 			report.Error (1015, lexer.Location,
@@ -8371,7 +7720,6 @@ void case_871()
 	  }
 
 void case_872()
-#line 5646 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -8391,14 +7739,12 @@ void case_872()
 	  }
 
 void case_875()
-#line 5681 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (!settings.Unsafe)
 			Error_UnsafeCodeNotAllowed (GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_877()
-#line 5691 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -8408,7 +7754,6 @@ void case_877()
 	  }
 
 void case_878()
-#line 5699 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 
@@ -8417,7 +7762,6 @@ void case_878()
 	  }
 
 void case_879()
-#line 5709 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	    start_block (GetLocation (yyVals[-2+yyTop]));
 	    
@@ -8429,14 +7773,12 @@ void case_879()
 	  }
 
 void case_880()
-#line 5719 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = current_variable;
 		current_variable = null;
 	  }
 
 void case_881()
-#line 5724 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -8447,7 +7789,6 @@ void case_881()
 	  }
 
 void case_882()
-#line 5736 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	    start_block (GetLocation (yyVals[-2+yyTop]));
 	    
@@ -8459,14 +7800,12 @@ void case_882()
 	  }
 
 void case_883()
-#line 5746 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = current_variable;	  
 		current_variable = null;
 	  }
 
 void case_884()
-#line 5751 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -8477,7 +7816,6 @@ void case_884()
 	  }
 
 void case_885()
-#line 5760 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[0+yyTop] is EmptyStatement && lexer.peek_token () == Token.OPEN_BRACE)
 			Warning_EmptyStatement (GetLocation (yyVals[0+yyTop]));
@@ -8487,7 +7825,6 @@ void case_885()
 	  }
 
 void case_886()
-#line 5768 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		
@@ -8496,21 +7833,18 @@ void case_886()
 	  }
 
 void case_888()
-#line 5779 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* It has to be here for the parent to safely restore artificial block*/
 	  	Error_SyntaxError (yyToken);
 	  }
 
 void case_890()
-#line 5791 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_variable.Initializer = (Expression) yyVals[0+yyTop];
 		yyVal = current_variable;
 	  }
 
 void case_891()
-#line 5802 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		lexer.query_parsing = false;
 			
@@ -8524,7 +7858,6 @@ void case_891()
 	  }
 
 void case_892()
-#line 5814 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Linq.AQueryClause from = yyVals[-1+yyTop] as Linq.AQueryClause;
 			
@@ -8536,7 +7869,6 @@ void case_892()
 	  }
 
 void case_893()
-#line 5825 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	        lexer.query_parsing = false;
 		yyVal = yyVals[-1+yyTop];
@@ -8546,7 +7878,6 @@ void case_893()
 	  }
 
 void case_894()
-#line 5832 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	        yyVal = yyVals[-1+yyTop];
 		current_block.SetEndLocation (lexer.Location);
@@ -8554,7 +7885,6 @@ void case_894()
 	  }
 
 void case_895()
-#line 5841 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  
@@ -8564,7 +7894,6 @@ void case_895()
 	  }
 
 void case_896()
-#line 5849 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  
@@ -8578,7 +7907,6 @@ void case_896()
 	  }
 
 void case_897()
-#line 5864 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  
@@ -8588,7 +7916,6 @@ void case_897()
 	  }
 
 void case_898()
-#line 5872 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block = new Linq.QueryBlock (current_block, lexer.Location);
 	  
@@ -8602,7 +7929,6 @@ void case_898()
 	  }
 
 void case_900()
-#line 5891 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		var sn = new Linq.RangeVariable (lt.Value, lt.Location);
@@ -8615,7 +7941,6 @@ void case_900()
 	  }
 
 void case_902()
-#line 5906 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		var sn = new Linq.RangeVariable (lt.Value, lt.Location);
@@ -8631,7 +7956,6 @@ void case_902()
 	  }
 
 void case_903()
-#line 5923 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Linq.AQueryClause head = (Linq.AQueryClause)yyVals[-1+yyTop];
 		
@@ -8648,7 +7972,6 @@ void case_903()
 	  }
 
 void case_904()
-#line 5938 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	Linq.AQueryClause head = (Linq.AQueryClause)yyVals[0+yyTop];
 
@@ -8662,21 +7985,18 @@ void case_904()
 	  }
 
 void case_906()
-#line 5951 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		report.Error (742, GetLocation (yyVals[0+yyTop]), "Unexpected symbol `{0}'. A query body must end with select or group clause", GetSymbolName (yyToken));
 		yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_907()
-#line 5956 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		Error_SyntaxError (yyToken);
 		yyVal = null;
 	  }
 
 void case_909()
-#line 5968 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.Select ((Linq.QueryBlock)current_block, (Expression)yyVals[0+yyTop], GetLocation (yyVals[-2+yyTop]));
 
@@ -8685,7 +8005,6 @@ void case_909()
 	  }
 
 void case_910()
-#line 5975 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 	  	if (linq_clause_blocks == null)
 	  		linq_clause_blocks = new Stack<Linq.QueryBlock> ();
@@ -8695,7 +8014,6 @@ void case_910()
 	  }
 
 void case_911()
-#line 5983 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8704,7 +8022,6 @@ void case_911()
 	  }
 
 void case_912()
-#line 5990 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.GroupBy ((Linq.QueryBlock)current_block, (Expression)yyVals[-3+yyTop], linq_clause_blocks.Pop (), (Expression)yyVals[0+yyTop], GetLocation (yyVals[-5+yyTop]));
 		lbag.AddLocation (yyVal, GetLocation (yyVals[-1+yyTop]));
@@ -8714,14 +8031,12 @@ void case_912()
 	  }
 
 void case_914()
-#line 6002 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		((Linq.AQueryClause)yyVals[-1+yyTop]).Tail.Next = (Linq.AQueryClause)yyVals[0+yyTop];
 		yyVal = yyVals[-1+yyTop];
 	  }
 
 void case_921()
-#line 6022 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var lt = (Tokenizer.LocatedToken) yyVals[-3+yyTop];
 		var sn = new Linq.RangeVariable (lt.Value, lt.Location);
@@ -8735,7 +8050,6 @@ void case_921()
 	  }
 
 void case_923()
-#line 6041 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.Where ((Linq.QueryBlock)current_block, (Expression)yyVals[0+yyTop], GetLocation (yyVals[-2+yyTop]));
 
@@ -8744,7 +8058,6 @@ void case_923()
 	  }
 
 void case_924()
-#line 6051 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (linq_clause_blocks == null)
 			linq_clause_blocks = new Stack<Linq.QueryBlock> ();
@@ -8754,7 +8067,6 @@ void case_924()
 	  }
 
 void case_925()
-#line 6059 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8764,7 +8076,6 @@ void case_925()
 	  }
 
 void case_926()
-#line 6067 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.AddStatement (new ContextualReturn ((Expression) yyVals[-1+yyTop]));
 		current_block.SetEndLocation (lexer.Location);
@@ -8774,7 +8085,6 @@ void case_926()
 	  }
 
 void case_927()
-#line 6075 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.AddStatement (new ContextualReturn ((Expression) yyVals[-1+yyTop]));
 		current_block.SetEndLocation (lexer.Location);
@@ -8814,7 +8124,6 @@ void case_927()
 	  }
 
 void case_928()
-#line 6113 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (linq_clause_blocks == null)
 			linq_clause_blocks = new Stack<Linq.QueryBlock> ();
@@ -8824,7 +8133,6 @@ void case_928()
 	  }
 
 void case_929()
-#line 6121 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8834,7 +8142,6 @@ void case_929()
 	  }
 
 void case_930()
-#line 6129 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.AddStatement (new ContextualReturn ((Expression) yyVals[-1+yyTop]));
 		current_block.SetEndLocation (lexer.Location);
@@ -8844,7 +8151,6 @@ void case_930()
 	  }
 
 void case_931()
-#line 6137 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.AddStatement (new ContextualReturn ((Expression) yyVals[-1+yyTop]));
 		current_block.SetEndLocation (lexer.Location);
@@ -8886,7 +8192,6 @@ void case_931()
 	  }
 
 void case_935()
-#line 6192 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8895,7 +8200,6 @@ void case_935()
 	  }
 
 void case_937()
-#line 6203 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8904,14 +8208,12 @@ void case_937()
 	  }
 
 void case_938()
-#line 6210 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		((Linq.AQueryClause)yyVals[-3+yyTop]).Next = (Linq.AQueryClause)yyVals[0+yyTop];
 		yyVal = yyVals[-3+yyTop];
 	  }
 
 void case_940()
-#line 6219 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		current_block.SetEndLocation (lexer.Location);
 		current_block = current_block.Parent;
@@ -8920,42 +8222,36 @@ void case_940()
 	 }
 
 void case_941()
-#line 6226 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		((Linq.AQueryClause)yyVals[-3+yyTop]).Tail.Next = (Linq.AQueryClause)yyVals[0+yyTop];
 		yyVal = yyVals[-3+yyTop];
 	 }
 
 void case_943()
-#line 6238 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.OrderByAscending ((Linq.QueryBlock) current_block, (Expression)yyVals[-1+yyTop]);	
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_944()
-#line 6243 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.OrderByDescending ((Linq.QueryBlock) current_block, (Expression)yyVals[-1+yyTop]);	
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_946()
-#line 6255 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.ThenByAscending ((Linq.QueryBlock) current_block, (Expression)yyVals[-1+yyTop]);	
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_947()
-#line 6260 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		yyVal = new Linq.ThenByDescending ((Linq.QueryBlock) current_block, (Expression)yyVals[-1+yyTop]);	
 		lbag.AddLocation (yyVal, GetLocation (yyVals[0+yyTop]));
 	  }
 
 void case_949()
-#line 6270 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		/* query continuation block is not linked with query block but with block*/
 		/* before. This means each query can use same range variable names for*/
@@ -8973,7 +8269,6 @@ void case_949()
 	  }
 
 void case_950()
-#line 6286 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var current_block = linq_clause_blocks.Pop ();	  
 		var lt = (Tokenizer.LocatedToken) yyVals[-2+yyTop];
@@ -8984,7 +8279,6 @@ void case_950()
 	  }
 
 void case_953()
-#line 6313 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 { 
 		current_container = current_type = new Class (current_container, new MemberName ("<InteractiveExpressionClass>"), Modifiers.PUBLIC, null);
 
@@ -9014,7 +8308,6 @@ void case_953()
 	  }
 
 void case_954()
-#line 6341 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		--lexer.parsing_block;
 		Method method = (Method) oob_stack.Pop ();
@@ -9026,7 +8319,6 @@ void case_954()
 	  }
 
 void case_964()
-#line 6384 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		module.DocumentationBuilder.ParsedBuiltinType = (TypeExpression)yyVals[-1+yyTop];
 		module.DocumentationBuilder.ParsedParameters = (List<DocumentationParameter>)yyVals[0+yyTop];
@@ -9034,7 +8326,6 @@ void case_964()
 	  }
 
 void case_965()
-#line 6390 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		module.DocumentationBuilder.ParsedBuiltinType = (TypeExpression)yyVals[-3+yyTop];
 		module.DocumentationBuilder.ParsedParameters = (List<DocumentationParameter>)yyVals[0+yyTop];
@@ -9043,14 +8334,12 @@ void case_965()
 	  }
 
 void case_968()
-#line 6405 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		module.DocumentationBuilder.ParsedParameters = (List<DocumentationParameter>)yyVals[-1+yyTop];
 		yyVal = new MemberName ((MemberName) yyVals[-6+yyTop], MemberCache.IndexerNameAlias, Location.Null);
 	  }
 
 void case_969()
-#line 6410 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var p = (List<DocumentationParameter>)yyVals[0+yyTop] ?? new List<DocumentationParameter> (1);
 		p.Add (new DocumentationParameter ((FullNamedExpression) yyVals[-1+yyTop]));
@@ -9060,7 +8349,6 @@ void case_969()
 	  }
 
 void case_970()
-#line 6418 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var p = (List<DocumentationParameter>)yyVals[0+yyTop] ?? new List<DocumentationParameter> (1);
 		p.Add (new DocumentationParameter ((FullNamedExpression) yyVals[-1+yyTop]));
@@ -9070,7 +8358,6 @@ void case_970()
 	  }
 
 void case_971()
-#line 6426 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var p = (List<DocumentationParameter>)yyVals[0+yyTop] ?? new List<DocumentationParameter> (1);
 		module.DocumentationBuilder.ParsedParameters = p;
@@ -9079,7 +8366,6 @@ void case_971()
 	  }
 
 void case_979()
-#line 6464 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var parameters = new List<DocumentationParameter> ();
 		parameters.Add ((DocumentationParameter) yyVals[0+yyTop]);
@@ -9087,7 +8373,6 @@ void case_979()
 	  }
 
 void case_980()
-#line 6470 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		var parameters = yyVals[-2+yyTop] as List<DocumentationParameter>;
 		parameters.Add ((DocumentationParameter) yyVals[0+yyTop]);
@@ -9095,7 +8380,6 @@ void case_980()
 	  }
 
 void case_981()
-#line 6479 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 {
 		if (yyVals[-1+yyTop] != null)
 			yyVal = new DocumentationParameter ((Parameter.Modifier) yyVals[-1+yyTop], (FullNamedExpression) yyVals[0+yyTop]);
@@ -9103,7 +8387,6 @@ void case_981()
 			yyVal = new DocumentationParameter ((FullNamedExpression) yyVals[0+yyTop]);
 	  }
 
-#line default
    static readonly short [] yyLhs  = {              -1,
     0,    4,    0,    0,    1,    1,    1,    1,    2,    2,
    11,   11,   12,   12,   13,   13,   14,   15,   15,   15,
@@ -12513,7 +11796,6 @@ void case_981()
   362,
   };
 
-#line 6488 "C:\Users\roal\Documents\GitHub\mono\mcs\class\Mono.CSharp\..\..\mcs\cs-parser.jay"
 
 // <summary>
 //  A class used to hold info about an operator declarator
@@ -13331,7 +12613,6 @@ static string GetTokenName (int token)
 
 /* end end end */
 }
-#line default
 namespace yydebug {
         using System;
 	 internal interface yyDebug {
