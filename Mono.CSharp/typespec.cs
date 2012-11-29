@@ -1056,6 +1056,23 @@ namespace Mono.CSharp
 				return true;
 			}
 
+			public static bool IsEqual (TypeSpec[] a, TypeSpec[] b)
+			{
+				if (a == b)
+					return true;
+
+				if (a.Length != b.Length)
+					return false;
+
+				for (int i = 0; i < a.Length; ++i) {
+					if (!IsEqual (a[i], b[i]))
+						return false;
+				}
+
+				return true;
+			}
+
+
 			//
 			// Compares unordered arrays
 			//
@@ -1337,6 +1354,8 @@ namespace Mono.CSharp
 		IAssemblyDefinition DeclaringAssembly { get; }
 		string Namespace { get; }
 		bool IsPartial { get; }
+		bool IsComImport { get; }
+		bool IsTypeForwarder { get; }
 		int TypeParametersCount { get; }
 		TypeParameterSpec[] TypeParameters { get; }
 
@@ -1384,6 +1403,12 @@ namespace Mono.CSharp
 			}
 		}
 
+		bool ITypeDefinition.IsComImport {
+			get {
+				return false;
+			}
+		}
+
 		bool IMemberDefinition.IsImported {
 			get {
 				return false;
@@ -1391,6 +1416,12 @@ namespace Mono.CSharp
 		}
 
 		bool ITypeDefinition.IsPartial {
+			get {
+				return false;
+			}
+		}
+
+		bool ITypeDefinition.IsTypeForwarder {
 			get {
 				return false;
 			}
@@ -1508,7 +1539,19 @@ namespace Mono.CSharp
 
 		public TypeSpec Element { get; private set; }
 
+		bool ITypeDefinition.IsComImport {
+			get {
+				return false;
+			}
+		}
+
 		bool ITypeDefinition.IsPartial {
+			get {
+				return false;
+			}
+		}
+
+		bool ITypeDefinition.IsTypeForwarder {
 			get {
 				return false;
 			}

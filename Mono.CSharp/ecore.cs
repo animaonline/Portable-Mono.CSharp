@@ -360,6 +360,27 @@ namespace Mono.CSharp {
 			}
 		}
 
+		//
+		// Implements identical simple name and type-name resolution
+		//
+		public Expression ProbeIdenticalTypeName (ResolveContext rc, Expression left, SimpleName name)
+		{
+			var t = left.Type;
+			if (t.Kind == MemberKind.InternalCompilerType || t is ElementTypeSpec || t.Arity > 0)
+				return left;
+
+			// In a member access of the form E.I, if E is a single identifier, and if the meaning of E as a simple-name is
+			// a constant, field, property, local variable, or parameter with the same type as the meaning of E as a type-name
+
+			if (left is MemberExpr || left is VariableReference) {
+				var identical_type = rc.LookupNamespaceOrType (name.Name, 0, LookupMode.Probing, loc) as TypeExpr;
+				if (identical_type != null && identical_type.Type == left.Type)
+					return identical_type;
+			}
+
+			return left;
+		}
+
 		public virtual string GetSignatureForError ()
 		{
 			return type.GetDefinition ().GetSignatureForError ();
@@ -2783,7 +2804,7 @@ namespace Mono.CSharp {
 				//
 				TypeSpec[] targs = null;
 				if (method.DeclaringType != InstanceExpression.Type) {
-					var base_override = MemberCache.FindMember (InstanceExpression.Type, new MemberFilter (method), BindingRestriction.InstanceOnly) as MethodSpec;
+					var base_override = MemberCache.FindMember (InstanceExpression.Type, new MemberFilter (method), BindingRestriction.InstanceOnly | BindingRestriction.OverrideOnly) as MethodSpec;
 					if (base_override != null && base_override.DeclaringType != method.DeclaringType) {
 						if (base_override.IsGeneric)
 							targs = method.TypeArguments;
@@ -2926,27 +2947,6 @@ namespace Mono.CSharp {
 			rc.Report.Error (1540, loc,
 				"Cannot access protected member `{0}' via a qualifier of type `{1}'. The qualifier must be of type `{2}' or derived from it",
 				member.GetSignatureForError (), qualifier.GetSignatureForError (), rc.CurrentType.GetSignatureForError ());
-		}
-
-		//
-		// Implements identicial simple name and type-name
-		//
-		public Expression ProbeIdenticalTypeName (ResolveContext rc, Expression left, SimpleName name)
-		{
-			var t = left.Type;
-			if (t.Kind == MemberKind.InternalCompilerType || t is ElementTypeSpec || t.Arity > 0)
-				return left;
-
-			// In a member access of the form E.I, if E is a single identifier, and if the meaning of E as a simple-name is
-			// a constant, field, property, local variable, or parameter with the same type as the meaning of E as a type-name
-
-			if (left is MemberExpr || left is VariableReference) {
-				var identical_type = rc.LookupNamespaceOrType (name.Name, 0, LookupMode.Probing, loc) as TypeExpr;
-				if (identical_type != null && identical_type.Type == left.Type)
-					return identical_type;
-			}
-
-			return left;
 		}
 
 		public bool ResolveInstanceExpression (ResolveContext rc, Expression rhs)
@@ -3822,11 +3822,7 @@ namespace Mono.CSharp {
 				// better conversion is performed between underlying types Y1 and Y2
 				//
 				if (p.IsGenericTask || q.IsGenericTask) {
-					if (am.Block.IsAsync) {
-						if (p.IsGenericTask != q.IsGenericTask) {
-							return 0;
-						}
-
+					if (am.Block.IsAsync && p.IsGenericTask && q.IsGenericTask) {
 						q = q.TypeArguments[0];
 						p = p.TypeArguments[0];
 					}
@@ -4200,6 +4196,9 @@ namespace Mono.CSharp {
 					} else if (arg_count > param_count) {
 						int args_gap = System.Math.Abs (arg_count - param_count);
 						return int.MaxValue - 10000 + args_gap;
+					} else if (arg_count < param_count - optional_count) {
+						int args_gap = System.Math.Abs (param_count - optional_count - arg_count);
+						return int.MaxValue - 10000 + args_gap;
 					}
 				} else if (arg_count != param_count) {
 					int args_gap = System.Math.Abs (arg_count - param_count);
@@ -4402,34 +4401,8 @@ namespace Mono.CSharp {
 					// if the type matches
 					//
 					Expression e = fp.DefaultValue;
-					if (!(e is Constant) || e.Type != ptypes [i]) {
-						//
-						// LAMESPEC: No idea what the exact rules are for System.Reflection.Missing.Value instead of null
-						//
-						var ptype = ptypes [i];
-						if (e == EmptyExpression.MissingValue && ptype.BuiltinType == BuiltinTypeSpec.Type.Object || ptype.BuiltinType == BuiltinTypeSpec.Type.Dynamic) {
-							e = new MemberAccess (new MemberAccess (new MemberAccess (
-								new QualifiedAliasMember (QualifiedAliasMember.GlobalAlias, "System", loc), "Reflection", loc), "Missing", loc), "Value", loc);
-						} else if (e is Constant) {
-							//
-							// Handles int to int? conversions
-							//
-							e = Convert.ImplicitConversionStandard (ec, e, ptype, loc);
-							
-							//
-							// When constant type paramter contains type argument
-							//
-							// Foo (T[] arg = null)
-							//
-							if (e == null) {
-								e = new DefaultValueExpression (new TypeExpression (ptype, loc), loc);
-							}
-						} else {
-							e = new DefaultValueExpression (new TypeExpression (ptype, loc), loc);
-						}
-					
-
-						e = e.Resolve (ec);
+					if (e != null) {
+						e = ResolveDefaultValueArgument (ec, ptypes[i], e, loc);
 					}
 
 					if ((fp.ModFlags & Parameter.Modifier.CallerMask) != 0) {
@@ -4520,6 +4493,39 @@ namespace Mono.CSharp {
 				arguments = orig_args;
 
 			return 0;
+		}
+
+		public static Expression ResolveDefaultValueArgument (ResolveContext ec, TypeSpec ptype, Expression e, Location loc)
+		{
+			if (e is Constant && e.Type == ptype)
+				return e;
+
+			//
+			// LAMESPEC: No idea what the exact rules are for System.Reflection.Missing.Value instead of null
+			//
+			if (e == EmptyExpression.MissingValue && ptype.BuiltinType == BuiltinTypeSpec.Type.Object || ptype.BuiltinType == BuiltinTypeSpec.Type.Dynamic) {
+				e = new MemberAccess (new MemberAccess (new MemberAccess (
+					new QualifiedAliasMember (QualifiedAliasMember.GlobalAlias, "System", loc), "Reflection", loc), "Missing", loc), "Value", loc);
+			} else if (e is Constant) {
+				//
+				// Handles int to int? conversions
+				//
+				e = Convert.ImplicitConversionStandard (ec, e, ptype, loc);
+
+				//
+				// When constant type paramter contains type argument
+				//
+				// Foo (T[] arg = null)
+				//
+				if (e == null) {
+					e = new DefaultValueExpression (new TypeExpression (ptype, loc), loc);
+				}
+			} else {
+				e = new DefaultValueExpression (new TypeExpression (ptype, loc), loc);
+			}
+
+
+			return e.Resolve (ec);
 		}
 
 		//
@@ -5812,6 +5818,8 @@ namespace Mono.CSharp {
 	//
 	sealed class PropertyExpr : PropertyOrIndexerExpr<PropertySpec>
 	{
+		Arguments arguments;
+
 		public PropertyExpr (PropertySpec spec, Location l)
 			: base (l)
 		{
@@ -5823,9 +5831,10 @@ namespace Mono.CSharp {
 
 		protected override Arguments Arguments {
 			get {
-				return null;
+				return arguments;
 			}
 			set {
+				arguments = value;
 			}
 		}
 
@@ -5982,7 +5991,7 @@ namespace Mono.CSharp {
 					}
 				}
 			} else {
-				args = new Arguments (1);
+				args = arguments == null ? new Arguments (1) : arguments;
 
 				if (leave_copy) {
 					source.Emit (ec);
@@ -6032,6 +6041,22 @@ namespace Mono.CSharp {
 			}
 
 			DoBestMemberChecks (rc, best_candidate);
+
+			// Handling of com-imported properties with any number of default property parameters
+			if (best_candidate.HasGet && !best_candidate.Get.Parameters.IsEmpty) {
+				var p = best_candidate.Get.Parameters;
+				arguments = new Arguments (p.Count);
+				for (int i = 0; i < p.Count; ++i) {
+					arguments.Add (new Argument (OverloadResolver.ResolveDefaultValueArgument (rc, p.Types [i], p.FixedParameters [i].DefaultValue, loc)));
+				}
+			} else if (best_candidate.HasSet && best_candidate.Set.Parameters.Count > 1) {
+				var p = best_candidate.Set.Parameters;
+				arguments = new Arguments (p.Count - 1);
+				for (int i = 0; i < p.Count - 1; ++i) {
+					arguments.Add (new Argument (OverloadResolver.ResolveDefaultValueArgument (rc, p.Types [i], p.FixedParameters [i].DefaultValue, loc)));
+				}
+			}
+
 			return this;
 		}
 
